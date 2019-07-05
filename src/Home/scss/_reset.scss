@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 16px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: SF pro display, SF pro text, Helvetica, Pingfang SC;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: $text-color-default;
+}
+
+a, div {
+  -webkit-tap-highlight-color: black(10);
+}
+
+button {
+  background: none;
+  outline: none;
+}

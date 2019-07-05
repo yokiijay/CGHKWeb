@@ -1,0 +1,41 @@
+@mixin font-nav {
+  font-size: 1.6rem;
+  color: $text-color-default;
+  font-family: PingFangSC-Semibold, PingFangSC;
+}
+
+@mixin font-display {
+  font-size: 4.8rem;
+  color: $text-color-default;
+  font-family: PingFangSC-Thin, PingFangSC;
+}
+
+@mixin font-display-2 {
+  font-size: 3.6rem;
+  color: $text-color-default;
+  font-family: PingFangSC-Medium, PingFangSC;
+}
+
+@mixin font-headline {
+  font-size: 3.0rem;
+  color: $text-color-default;
+  font-family: PingFangSC-Medium, PingFangSC;
+}
+
+@mixin font-title {
+  font-size: 1.6rem;
+  color: $text-color-greyblue;
+  font-family: PingFangSC-Medium, PingFangSC;
+}
+
+@mixin font-body {
+  font-size: 1.4rem;
+  color: $text-color-lightblue;
+  font-family: PingFangSC-Regular, PingFangSC;
+}
+
+@mixin font($size, $weight: normal, $color: $text-color-default) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}

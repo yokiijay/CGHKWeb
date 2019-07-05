@@ -1,0 +1,57 @@
+$nav-background: rgba(#262B33, .9);
+$nav-color: $text-color-default;
+
+/* 整个nav */
+.nav { 
+  background: $nav-background;
+  &__wrapper {
+    margin: 0 auto;
+    height: 150px;
+    max-width: 1280px;
+    padding: 30px 70px 30px 90px;
+    @include flex;
+  }
+
+  &__logo {
+    width: 227px;
+    height: 90px;
+    background: url(../../images/logo.svg) center/contain no-repeat;
+  }
+}
+
+/* nav-links */
+.nav-links {
+  flex: 1;
+  @include flex-column;
+  align-items: flex-end;
+  justify-content: space-between;
+  @include font-nav;
+
+  a {
+    display: inline-block;
+  }
+  a:hover {
+    color: $text-color-accent;
+  }
+}
+
+/* nav-links 上面的 */
+.nav-links-one {
+  &__item {
+    padding: 0 10px;
+  }
+}
+
+/* nav-links 下面的 */
+.nav-links-two {
+  align-self: flex-start;
+  padding-left: 80px;
+  &__item+&__item {
+    padding: 0 15px;
+  }
+}
+
+/* language 语言 */
+.language {
+  
+}

@@ -1,0 +1,45 @@
+
+/*------------------ Screen ------------------*/
+@mixin sm {
+  @media screen and (max-width: $screen-sm-max){
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: $screen-md-max){
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: $screen-lg-max){
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: $screen-xl-max){
+    @content;
+  }
+}
+ 
+@mixin screen-max ($screen) {
+  @media screen and (max-width: $screen) {
+    @content;
+  }
+}
+
+/*------------------ Helpers ------------------*/
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
