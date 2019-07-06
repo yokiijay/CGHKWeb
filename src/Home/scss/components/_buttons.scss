@@ -1,0 +1,18 @@
+%btn-stroke {
+  border: 1px solid $text-color-default;
+  border-radius: 2px;
+  background: none;
+  padding: 2px 24px;
+  @include font(18px, null, $text-family-pingfang-semibold);
+  color: $text-color-default;
+  display: inline-block;
+
+  &:hover {
+    border-color: $text-color-accent;
+    color: $text-color-accent;
+  }
+}
+
+.btn-stroke {
+  @extend %btn-stroke;
+}

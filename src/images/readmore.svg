@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>readmore</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-PC" transform="translate(-1124.000000, -622.000000)" fill-rule="nonzero">
+            <g id="Message-of-President" transform="translate(890.000000, 150.000000)">
+                <g id="编组-4" transform="translate(151.000000, 470.000000)">
+                    <g id="readmore" transform="translate(91.000000, 10.000000) rotate(-90.000000) translate(-91.000000, -10.000000) translate(83.000000, 2.000000)">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="16" height="16"></rect>
+                        <path d="M8,0 C3.6,0 0,3.6 0,8 C0,12.4 3.6,16 8,16 C12.4,16 16,12.4 16,8 C16,3.6 12.4,0 8,0 Z M8,14.6666667 C4.33333333,14.6666667 1.33333333,11.6666667 1.33333333,8 C1.33333333,4.33333333 4.33333333,1.33333333 8,1.33333333 C11.6666667,1.33333333 14.6666667,4.33333333 14.6666667,8 C14.6666667,11.6666667 11.6666667,14.6666667 8,14.6666667 Z M12.4,6.2 C12.1333333,5.93333333 11.7333333,5.93333333 11.4666667,6.2 L8,9.66666667 L4.53333333,6.2 C4.26666666,5.93333333 3.86666666,5.93333333 3.6,6.2 C3.33333333,6.46666667 3.33333333,6.86666667 3.6,7.13333333 L7.53333333,11.0666667 C7.8,11.3333333 8.2,11.3333333 8.46666667,11.0666667 L12.4,7.13333333 C12.6666667,6.93333333 12.6666667,6.46666666 12.4,6.2 Z" id="形状" fill="#5EABFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

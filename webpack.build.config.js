@@ -24,7 +24,10 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: [MiniCssPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [MiniCssPlugin.loader, 'css-loader', 'postcss-loader', 'resolve-url-loader',{
+          loader: 'sass-loader',
+          options: { sourceMap: true }
+        }]
       },
       {
         test: /\.(jpg|png|svg|gif|webp)$/,

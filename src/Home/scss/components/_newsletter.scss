@@ -1,0 +1,10 @@
+.newsletter {
+  background: $bg-color-secondary;
+  &__wrapper {
+    @extend .perspective__wrapper;
+  }
+
+  &__title {
+    @extend .perspective__title;
+  }
+}

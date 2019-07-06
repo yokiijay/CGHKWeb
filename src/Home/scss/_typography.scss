@@ -33,9 +33,3 @@
   color: $text-color-lightblue;
   font-family: PingFangSC-Regular, PingFangSC;
 }
-
-@mixin font($size, $weight: normal, $color: $text-color-default) {
-  font-size: $size;
-  font-weight: $weight;
-  color: $color;
-}

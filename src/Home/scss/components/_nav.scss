@@ -1,7 +1,7 @@
 $nav-background: rgba(#262B33, .9);
 $nav-color: $text-color-default;
 
-/* 整个nav */
+/* nav */
 .nav { 
   background: $nav-background;
   &__wrapper {
@@ -15,21 +15,23 @@ $nav-color: $text-color-default;
   &__logo {
     width: 227px;
     height: 90px;
-    background: url(../../images/logo.svg) center/contain no-repeat;
+    background: url(../../../images/logo.svg) center/contain no-repeat;
   }
 }
 
 /* nav-links */
 .nav-links {
+  height: 100%;
   flex: 1;
   @include flex-column;
   align-items: flex-end;
   justify-content: space-between;
   @include font-nav;
-
+  
   a {
     display: inline-block;
   }
+
   a:hover {
     color: $text-color-accent;
   }
@@ -53,5 +55,50 @@ $nav-color: $text-color-default;
 
 /* language 语言 */
 .language {
-  
+  // background: url(../../images/language-en.svg) center/100% no-repeat;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 40px;
+  vertical-align: -10%;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 3px;
+    background: url(../../../images/language-arrow.svg) center/cover no-repeat;
+    position: absolute;
+    right: -50%;
+    top: 14px;
+  }
+
+  &__item {
+    position: absolute;
+    padding: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: $bg-color-darken;
+    border-radius: 4px;
+    transition: .3s;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;
+
+    img { display: block }
+    li:first-of-type {
+      margin-bottom: 8px;
+    }
+    li {
+      opacity: .3;
+    }
+    li:hover {
+      opacity: 1;
+    }
+  }
+
+  &:hover &__item {
+    height: 50px;
+    opacity: 1;
+  }
 }

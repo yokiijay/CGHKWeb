@@ -8,12 +8,19 @@ html {
 
 body {
   font-size: 16px;
+  color: $text-color-default;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: SF pro display, SF pro text, Helvetica, Pingfang SC;
+  font-family: Pingfang SC, SF pro display,
+  SF pro text,
+  Helvetica;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
 }
 
 ul {
@@ -35,4 +42,13 @@ a, div {
 button {
   background: none;
   outline: none;
+}
+
+i {
+  position: relative;
+  top: 1px;
+}
+
+figure {
+  margin: 0;
 }
