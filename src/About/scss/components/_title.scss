@@ -1,0 +1,5 @@
+.title {
+  @include flex-start;
+  @include font(48px, null, $text-family-pingfang-thin);
+  img { padding-right: 15px }
+}

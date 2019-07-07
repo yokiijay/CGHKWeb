@@ -6,8 +6,10 @@ const HtmlPlugin = require('html-webpack-plugin')
 module.exports = {
   mode: 'development',
   entry: {
+    /* 每增加一个页面都在这里引入口 */
     index: './src/index.js',
-    'about-CGHK': './src/About-CGHK/about-CGHK.js'
+    'about-CGHK': './src/About-CGHK/about-CGHK.js',
+    'about': './src/About/about.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -62,6 +64,7 @@ module.exports = {
   },
   plugins: [
     new CleanPlugin(),
+    /* 每增加一个页面都在这里引入口 + chunks */
     new HtmlPlugin({
       template: './src/index.html',
       filename: 'index.html',
@@ -71,6 +74,11 @@ module.exports = {
       template: './src/about-CGHK.html',
       filename: 'about-CGHK.html',
       chunks: ['about-CGHK']
-    })
+    }),
+    new HtmlPlugin({
+      template: './src/about.html',
+      filename: 'about.html',
+      chunks: ['about']
+    }),
   ]
 }
