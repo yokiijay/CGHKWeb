@@ -76,6 +76,7 @@
     'a c'
     'b c';
     position: relative;
+    span { @include font(18px, $text-color-accent, $text-family-pingfang-medium); margin-bottom: 20px }
     h2 { grid-row: 2; padding-right: 40px; @include font(40px,null,$text-family-pingfang-medium)}
     &-pic {
       grid-row: 2;
