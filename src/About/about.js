@@ -1,2 +1,2 @@
-import '../about-CGHK.html'
+import '../about.html'
 import './scss/main.scss'
