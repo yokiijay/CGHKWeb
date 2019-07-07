@@ -1,5 +1,5 @@
-footer {
-  padding: 30px 0;
-  background: $bg-color-primary;
+.footer {
   @include font(14px, $text-color-greyblue, $text-family-pingfang-medium);
+  text-align: center;
+  padding: 30px;
 }

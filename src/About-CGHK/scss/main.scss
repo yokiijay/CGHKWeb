@@ -12,12 +12,12 @@
 @import 'components/_linkto';
 @import 'components/_buttons';
 @import 'components/header';
-@import 'components/perspective';
-@import 'components/newsletter';
-@import 'components/event';
-@import 'components/about';
+@import 'components/aside';
+@import 'components/body';
+@import 'components/title';
 @import 'components/footer';
 
 body {
   background: $bg-color-primary;
+  overflow-x: hidden;
 }

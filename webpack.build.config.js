@@ -9,7 +9,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './src/index.js',
-    about: './src/About/about.js'
+    'about-CGHK': './src/About-CGHK/about-CGHK.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -65,9 +65,9 @@ module.exports = {
       chunks: ['index']
     }),
     new HtmlPlugin({
-      template: './src/about.html',
-      filename: 'about.html',
-      chunks: ['about']
+      template: './src/about-CGHK.html',
+      filename: 'about-CGHK.html',
+      chunks: ['about-CGHK']
     }),
     new MiniCssPlugin({
       filename: 'css/[name].style.css'

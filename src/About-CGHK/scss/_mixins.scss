@@ -86,4 +86,7 @@
   font-size: $size;
   color: $color;
   font-family: $family;
+  @if($family==PingFangSC-Thin) {
+    font-weight: 100;
+  }
 }

@@ -4,10 +4,10 @@ const CleanPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     index: './src/index.js',
-    about: './src/About/about.js'
+    'about-CGHK': './src/About-CGHK/about-CGHK.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -68,9 +68,9 @@ module.exports = {
       chunks: ['index']
     }),
     new HtmlPlugin({
-      template: './src/about.html',
-      filename: 'about.html',
-      chunks: ['about']
+      template: './src/about-CGHK.html',
+      filename: 'about-CGHK.html',
+      chunks: ['about-CGHK']
     })
   ]
 }
