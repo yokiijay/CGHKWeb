@@ -17,3 +17,7 @@
 @import 'components/event';
 @import 'components/about';
 @import 'components/footer';
+
+body {
+  background: $bg-color-primary;
+}

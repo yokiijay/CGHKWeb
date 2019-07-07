@@ -2,15 +2,18 @@ const path = require('path')
 const CleanPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
 const HtmlPlugin = require('html-webpack-plugin')
 const MiniCssPlugin = require('mini-css-extract-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    about: './src/About/about.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: 'js/[name].bundle.js'
   },
   devtool: 'source-map',
   devServer: {
@@ -24,7 +27,12 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        use: [MiniCssPlugin.loader, 'css-loader', 'postcss-loader', 'resolve-url-loader',{
+        use: [{
+          loader: MiniCssPlugin.loader,
+          options: {
+            publicPath: '../'
+          }
+        }, 'css-loader', 'postcss-loader', 'resolve-url-loader',{
           loader: 'sass-loader',
           options: { sourceMap: true }
         }]
@@ -34,24 +42,35 @@ module.exports = {
         use: [{
           loader: 'file-loader',
           options: {
-            outputPath: 'images'
+            outputPath: 'images',
           }
         }]
       },
       {
         test: /\.html$/,
-        use: ['html-loader']
+        use: [{
+          loader: 'html-loader'
+        }]
       }
     ]
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
     new CleanPlugin(),
     new HtmlPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlPlugin({
+      template: './src/about.html',
+      filename: 'about.html',
+      chunks: ['about']
     }),
     new MiniCssPlugin({
-      filename: '[name].style.css'
+      filename: 'css/[name].style.css'
     })
   ]
 }

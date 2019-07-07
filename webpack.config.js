@@ -1,11 +1,13 @@
 const path = require('path')
+const webpack = require('webpack')
 const CleanPlugin = require('clean-webpack-plugin').CleanWebpackPlugin
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
-    index: './src/index.js'
+    index: './src/index.js',
+    about: './src/About/about.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -17,7 +19,8 @@ module.exports = {
     port: 3000,
     host: '0.0.0.0',
     overlay: true,
-    hot: true
+    hot: true,
+    compress: true
   },
   module: {
     rules: [
@@ -61,7 +64,13 @@ module.exports = {
     new CleanPlugin(),
     new HtmlPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlPlugin({
+      template: './src/about.html',
+      filename: 'about.html',
+      chunks: ['about']
     })
   ]
 }
