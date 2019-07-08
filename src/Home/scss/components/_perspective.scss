@@ -69,7 +69,8 @@
     overflow: hidden;
     figure {
       @include figure {
-        background-image: url(../../../images/perspective-1.png);
+        background: url(../../../images/perspective-1.png) white;
+        background-blend-mode: multiply;
       }
     }
   }
