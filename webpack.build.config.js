@@ -11,6 +11,7 @@ module.exports = {
     index: './src/index.js',
     'about-CGHK': './src/About-CGHK/about-CGHK.js',
     'about': './src/About/about.js',
+    'perspective': './src/Perspective/perspective.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -74,6 +75,11 @@ module.exports = {
       template: './src/about.html',
       filename: 'about.html',
       chunks: ['about']
+    }),
+    new HtmlPlugin({
+      template: './src/perspective.html',
+      filename: 'perspective.html',
+      chunks: ['perspective']
     }),
     new MiniCssPlugin({
       filename: 'css/[name].style.css'
