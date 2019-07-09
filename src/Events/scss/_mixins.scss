@@ -1,0 +1,92 @@
+
+/*------------------ Screen ------------------*/
+@mixin sm {
+  @media screen and (max-width: $screen-sm-max){
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: $screen-md-max){
+    @content;
+  }
+}
+
+@mixin lg {
+  @media screen and (max-width: $screen-lg-max){
+    @content;
+  }
+}
+
+@mixin xl {
+  @media screen and (max-width: $screen-xl-max){
+    @content;
+  }
+}
+ 
+@mixin screen-max ($screen) {
+  @media screen and (max-width: $screen) {
+    @content;
+  }
+}
+
+/*------------------ Helpers ------------------*/
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flex-column-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@mixin figure($hover:true) {
+  // 还需要给容器 position:relative和overflow:hidden
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @content;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .4s;
+    transform: scale(1.03);
+    filter: brightness(.96);
+  
+    @if ($hover != false) {
+      &:hover {
+        transform: scale(1);
+        filter: brightness(1.1);
+      }
+    
+      &:active {
+        transform: scale(1.03);
+      }
+    }
+}
+
+@mixin font($size, $color, $family: PingFangSC) {
+  font-size: $size;
+  color: $color;
+  font-family: $family;
+  @if($family==PingFangSC-Thin) {
+    font-weight: 100;
+  }
+}
