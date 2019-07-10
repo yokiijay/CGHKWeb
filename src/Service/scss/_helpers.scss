@@ -1,0 +1,7 @@
+.hr {
+  &:hover {
+    color: $text-color-accent;
+    text-decoration: underline;
+    text-decoration-color: rgba($text-color-accent, .1);
+  }
+}
