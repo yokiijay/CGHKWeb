@@ -5,12 +5,12 @@
 @import 'typography';
 
 // Vendors
-@import url('https://at.alicdn.com/t/font_1280010_y6qgzj51sf.css');
+@import '../../Common/vendors';
 
 // Components
-@import 'components/_flex';
-@import 'components/_linkto';
-@import 'components/_buttons';
+@import '../../Common/components/flex';
+@import '../../Common/components/linkto';
+@import '../../Common/components/buttons';
 @import 'components/header';
 @import 'components/perspective';
 @import 'components/newsletter';

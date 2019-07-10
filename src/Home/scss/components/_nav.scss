@@ -50,7 +50,66 @@ $nav-color: $text-color-default;
   align-self: flex-start;
   padding-left: 80px;
   &__item+&__item {
-    padding: 0 15px;
+    padding-left: 30px;
+  }
+  @include flex-start;
+
+  &__item {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
+
+    &:hover .nav-links-two__subnav {
+      visibility: visible;
+      transform: scale(1);
+      opacity: 1;
+    }
+    i { transform: scale(1.2);display: inline-block; }
+  }
+  &__subnav {
+    position: absolute;
+    text-align: left;
+    background: $bg-color-darken;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 2;
+    box-shadow: 0 4px 4px black(20);
+    left: 10px;
+    top: 100%;
+    // hover animation
+    transition: .2s;
+    transform-origin: left top;
+    transform: scale(.9);
+    opacity: 0;
+    visibility: hidden;
+    
+    li {
+      padding: 0 10px;
+      &:nth-child(even) {
+        background: rgba($bg-color-secondary, .4);
+      }
+      &:first-child {
+        padding-top: 4px;
+      }
+      &:last-child {
+        padding-bottom: 4px;
+      }
+      &:hover {
+        background: $color-primary;
+      }
+      a {
+        white-space: nowrap;
+        @include font(14px, null, $text-family-pingfang-regular);
+        padding: 10px 10px;
+        display: block;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  &__item:first-child &__subnav {
+    left: -20px;
   }
 }
 

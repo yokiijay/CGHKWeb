@@ -13,6 +13,7 @@ module.exports = {
     'perspective': './src/Perspective/perspective.js',
     'events': './src/Events/events.js',
     'service': './src/Service/service.js',
+    'membership': './src/Membership/membership.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -97,6 +98,11 @@ module.exports = {
       template: './src/service.html',
       filename: 'service.html',
       chunks: ['service']
+    }),
+    new HtmlPlugin({
+      template: './src/membership.html',
+      filename: 'membership.html',
+      chunks: ['membership']
     }),
   ]
 }

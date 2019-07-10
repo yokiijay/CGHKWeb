@@ -29,13 +29,13 @@
       background: url(../../../images/events-1.png);
     }
   }
-  figure::before {
-    content: '';
-    position: absolute;
-    top: 0;bottom: 0;left: 0;right: 0;
-    background: white;
-    mix-blend-mode: saturation;
-  }
+  // figure::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;bottom: 0;left: 0;right: 0;
+  //   background: white;
+  //   mix-blend-mode: saturation;
+  // }
   figure::after {
     content: '';
     position: absolute;
@@ -88,16 +88,16 @@
       }
     }
 
-    figure::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: white;
-      mix-blend-mode: saturation;
-    }
+    // figure::before {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   right: 0;
+    //   background: white;
+    //   mix-blend-mode: saturation;
+    // }
 
     figure::after {
       content: '';
