@@ -1,8 +1,7 @@
-@import 'variables';
-@import 'reset';
-@import 'mixins';
-@import 'grid';
-@import 'typography';
+@import '../../Common/variables';
+@import '../../Common/reset';
+@import '../../Common/mixins';
+@import '../../Common/typography';
 
 // Vendors
 @import '../../Common/vendors';
@@ -15,7 +14,7 @@
 @import 'components/aside';
 @import 'components/body';
 @import 'components/title';
-@import 'components/footer';
+@import '../../Common/components/footer';
 
 body {
   background: $bg-color-primary;

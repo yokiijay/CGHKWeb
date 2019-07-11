@@ -7,14 +7,14 @@
 @import '../../Common/vendors';
 
 // Components
-@import 'components/_flex';
-@import 'components/_linkto';
-@import 'components/_buttons';
+@import '../../Common/components/flex';
+@import '../../Common/components/linkto';
+@import '../../Common/components/buttons';
 @import 'components/header';
 @import 'components/aside';
 @import 'components/body';
 @import 'components/title';
-@import 'components/footer';
+@import '../../Common/components/footer';
 
 body {
   background: $bg-color-primary;

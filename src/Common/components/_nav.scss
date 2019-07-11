@@ -73,7 +73,7 @@ $nav-color: $text-color-default;
     border-radius: 8px;
     overflow: hidden;
     z-index: 2;
-    box-shadow: 0 4px 4px black(20);
+    box-shadow: $box-shadow;
     left: 10px;
     top: 100%;
     // hover animation
@@ -86,7 +86,7 @@ $nav-color: $text-color-default;
     li {
       padding: 0 10px;
       &:nth-child(even) {
-        background: rgba($bg-color-secondary, .4);
+        background: rgba($bg-color-secondary, .3);
       }
       &:first-child {
         padding-top: 4px;
