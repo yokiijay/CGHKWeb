@@ -1,0 +1,15 @@
+.linkto {
+  font-size: 14px;
+  color: $text-color-accent;
+  font-family: PingFangSC-Medium;
+
+  i {
+    display: inline-block;
+    padding-left: 10px;
+    transition: .2s;
+  }
+
+  &:hover i {
+    transform: translateX(4px);
+  }
+}

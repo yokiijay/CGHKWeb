@@ -10,10 +10,17 @@ module.exports = {
     index: './src/index.js',
     'about-CGHK': './src/About-CGHK/about-CGHK.js',
     'about': './src/About/about.js',
+    'about-committee': './src/About-Committee/about-committee.js',
     'perspective': './src/Perspective/perspective.js',
     'events': './src/Events/events.js',
     'service': './src/Service/service.js',
     'membership': './src/Membership/membership.js',
+    'private-policy': './src/Private-Policy/private-policy.js',
+    'service-research': './src/Service-Research/service-research.js',
+    'donate': './src/Donate/donate.js',
+    'contact': './src/Contact/contact.js',
+    'publication': './src/Publication/publication.js',
+    'media': './src/Media/media.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -103,6 +110,41 @@ module.exports = {
       template: './src/membership.html',
       filename: 'membership.html',
       chunks: ['membership']
+    }),
+    new HtmlPlugin({
+      template: './src/private-policy.html',
+      filename: 'private-policy.html',
+      chunks: ['private-policy']
+    }),
+    new HtmlPlugin({
+      template: './src/service-research.html',
+      filename: 'service-research.html',
+      chunks: ['service-research']
+    }),
+    new HtmlPlugin({
+      template: './src/donate.html',
+      filename: 'donate.html',
+      chunks: ['donate']
+    }),
+    new HtmlPlugin({
+      template: './src/contact.html',
+      filename: 'contact.html',
+      chunks: ['contact']
+    }),
+    new HtmlPlugin({
+      template: './src/publication.html',
+      filename: 'publication.html',
+      chunks: ['publication']
+    }),
+    new HtmlPlugin({
+      template: './src/media.html',
+      filename: 'media.html',
+      chunks: ['media']
+    }),
+    new HtmlPlugin({
+      template: './src/about-committee.html',
+      filename: 'about-committee.html',
+      chunks: ['about-committee']
     }),
   ]
 }

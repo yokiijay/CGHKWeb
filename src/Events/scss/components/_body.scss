@@ -88,6 +88,7 @@
     overflow: hidden;
     min-height: 600px;
     display: flex;
+    border-radius: 4px;
 
     figure {
       @include figure {
@@ -120,6 +121,7 @@
     overflow: hidden;
     min-height: 600px;
     display: flex;
+    border-radius: 4px;
 
     figure {
       @include figure {
@@ -152,6 +154,8 @@
     display: grid;
     grid-template-columns: auto auto auto;
     background: $bg-color-secondary;
+    overflow: hidden;
+    border-radius: 4px;
 
     &-img {
       position: relative;

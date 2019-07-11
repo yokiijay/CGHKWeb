@@ -138,7 +138,7 @@ $nav-color: $text-color-default;
     padding: 8px;
     left: 50%;
     transform: translateX(-50%);
-    background: $bg-color-darken;
+    background: #12151A;
     border-radius: 4px;
     transition: .3s;
     overflow: hidden;
@@ -150,7 +150,7 @@ $nav-color: $text-color-default;
       margin-bottom: 8px;
     }
     li {
-      opacity: .3;
+      opacity: .8;
     }
     li:hover {
       opacity: 1;

@@ -78,6 +78,8 @@
     position: relative;
     span { @include font(18px, $text-color-accent, $text-family-pingfang-medium); margin-bottom: 20px }
     h2 { grid-row: 2; padding-right: 40px; @include font(40px,null,$text-family-pingfang-medium)}
+    border-radius: 4px;
+
     &-pic {
       grid-row: 2;
       grid-area: c;
@@ -86,6 +88,8 @@
       position: absolute;
       bottom: -40px;
       overflow: hidden;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
       figure {
         @include figure {
           background: url(../../../images/president.png);
@@ -109,6 +113,6 @@
     @include font(18px, null, $text-family-pingfang-regular);
     line-height: 32px;
     margin-bottom: 32px;
-    img { width: 100%; }
+    img { width: 100%; border-radius: 4px; }
   }
 }

@@ -1,0 +1,260 @@
+.body {
+  display: grid;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 300px;
+  padding: 30px 90px;
+  grid-template-columns: auto;
+  column-gap: 80px;
+  row-gap: 40px;
+}
+
+/* Aside */
+.aside-bread {
+  @include flex-start;
+  // margin-bottom: 40px;
+
+  &__link {
+    @include font(14px, $text-color-silverblue, $text-family-pingfang-medium);
+    white-space: nowrap;
+    &:hover { color: $text-color-accent }
+  }
+  &__link:last-of-type {
+    color: $text-color-accent;
+  }
+  &__link+&__link::before{
+    content: '/';
+    display: inline;
+    padding: 0 4px;
+    color: $text-color-silverblue;
+  }
+}
+
+.aside-nav {
+  @include font(16px, null, $text-family-pingfang-medium);
+  @include flex-column-start;
+  padding-left: 24px;
+  position: relative;
+  
+  &__link {
+    line-height: 36px;
+
+    &:hover {
+      color: $text-color-accent;
+    }
+  }
+  &__link--current {
+    color: $text-color-accent;
+    @include flex-start;
+    &::before {
+      content: '';
+      width: 4px;
+      height: 16px;
+      border-radius: 2px;
+      background: $text-color-accent;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+
+/* Content */
+.content {
+  position: relative;
+  padding: 0 40px;
+
+  &__title {
+    margin: 0 -40px;
+    margin-bottom: 20px;
+  }
+  &__caption {
+    @include font(18px, null, $text-family-pingfang-regular);
+    text-align: justify;
+    line-height: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Content-cards */
+.content-cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 30px;
+
+  &__left {
+    grid-column: span 7;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    border-radius: 4px;
+
+    figure {
+      @include figure {
+        background: url(../../../images/events-15.png);
+      }
+    }
+  }
+  &__left-content {
+    align-self: flex-end;
+    position: relative;
+    padding: 30px 60px;
+    background: rgba(#0A1B33, .6);
+
+    h2 {
+      @include font(48px, $text-color-accent, (Cochin-Bold, serif));
+      span { @include font(20px, $text-color-accent, $text-family-pingfang-semibold) }
+      margin-bottom: 10px;
+    }
+    p {
+      @include font(24px, null, $text-family-pingfang-medium);
+      margin-bottom: 10px;
+    }
+    span {
+      @include font(16px, $text-color-greyblue, $text-family-pingfang-medium);
+    }
+  }
+  &__right {
+    grid-column: 8 / span 5;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    border-radius: 4px;
+
+    figure {
+      @include figure {
+        background: url(../../../images/events-4.png);
+      }
+    }
+  }
+  &__right-content {
+    position: relative;
+    align-self: flex-end;
+    padding: 30px;
+    background: $bg-color-secondary;
+
+    h2 {
+      @include font(38px, $text-color-greyblue, (Cochin-Bold, serif));
+      span { @include font(16px, $text-color-greyblue, $text-family-pingfang-semibold) }
+      margin-bottom: 8px;
+    }
+    p {
+      @include font(19px, null, $text-family-pingfang-medium);
+      margin-bottom: 25px;
+    }
+    span {
+      @include font(16px, $text-color-greyblue, $text-family-pingfang-medium);
+    }
+  }
+
+  &__item {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background: $bg-color-secondary;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &-img {
+      position: relative;
+      overflow: hidden;
+      width: 265px;
+      height: 100%;
+
+      figure {
+        @include figure {
+          background: url(../../../images/events-14.png);
+        }
+      }
+    }
+    &:nth-of-type(2) figure {
+      background-image: url(../../../images/events-13.png);
+    }
+    &:nth-of-type(3) figure {
+      background-image: url(../../../images/events-12.png);
+    }
+    &:nth-of-type(4) figure {
+      background-image: url(../../../images/events-11.png);
+    }
+    &:nth-of-type(5) figure {
+      background-image: url(../../../images/events-10.png);
+    }
+    &:nth-of-type(6) figure {
+      background-image: url(../../../images/events-9.png);
+    }
+    &:nth-of-type(7) figure {
+      background-image: url(../../../images/events-8.png);
+    }
+    &:nth-of-type(8) figure {
+      background-image: url(../../../images/events-7.png);
+    }
+    &:nth-of-type(9) figure {
+      background-image: url(../../../images/events-6.png);
+    }
+    &:nth-of-type(10) figure {
+      background-image: url(../../../images/events-5.png);
+    }
+  }
+  &__item-content {
+    padding: 26px 40px;
+
+    span {
+      @include font(14px, $text-color-greyblue, $text-family-pingfang-semibold);
+      display: block;
+      margin-bottom: 10px;
+    }
+    h3 {
+      @include font(24px, null, $text-family-pingfang-medium);
+      margin-bottom: 10px;
+    }
+    p {
+      @include font(18px, null, $text-family-pingfang-medium);
+    }
+  }
+  &__item-info {
+    max-width: 130px;
+    padding: 0 30px;
+    box-sizing: content-box;
+    place-self: center;
+    border-left: 1px solid #48546C;
+    @include font(16px, $text-color-greyblue, $text-family-pingfang-medium);
+    span+span { margin-top: 10px; display: block; }
+  }
+}
+
+/* Loading */
+.loading {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: -290px;
+  left: 0;
+
+  span {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 50%;
+    background: $text-color-silverblue;
+  }
+  span:nth-child(1) {
+    animation: blink .6s linear infinite alternate;
+  }
+  span:nth-child(2) {
+    animation: blink .6s linear .2s infinite alternate;
+  }
+  span:nth-child(3) {
+    animation: blink .6s linear .4s infinite alternate;
+  }
+  @keyframes blink {
+    from {
+      background: $text-color-silverblue;
+      transform: scale(1.0);
+    }
+    to {
+      background: $text-color-accent;
+      transform: scale(1.3);
+    }
+  }
+}

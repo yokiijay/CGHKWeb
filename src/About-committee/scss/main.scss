@@ -1,0 +1,21 @@
+@import '../../Common/variables';
+@import '../../Common/reset';
+@import '../../Common/mixins';
+@import '../../Common/typography';
+@import 'helpers';
+
+// Vendors
+@import '../../Common/vendors';
+
+// Components
+@import '../../Common/components/flex';
+@import '../../Common/components/linkto';
+@import '../../Common/components/buttons';
+@import 'components/header';
+@import 'components/body';
+@import 'components/title';
+@import '../../Common/components/footer';
+
+body {
+  background: $bg-color-primary;
+}
