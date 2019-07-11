@@ -7,7 +7,7 @@ import '../node_modules/slick-carousel/slick/slick'
 /*------------------ 轮播图 ------------------*/
 $('.header-carousel').slick({
   draggable: false,
-  // autoplay: true,
+  autoplay: true,
   arrows: false,
   speed: 800,
   pauseOnDotsHover: true,
