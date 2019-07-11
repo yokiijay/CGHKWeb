@@ -11,7 +11,7 @@ module.exports = {
     index: './src/index.js',
     'about-CGHK': './src/About-CGHK/about-CGHK.js',
     'about': './src/About/about.js',
-    'about-committee': './src/About-Committee/about-committee.js',
+    'about-committee': './src/About-committee/about-committee.js',
     'perspective': './src/Perspective/perspective.js',
     'events': './src/Events/events.js',
     'service': './src/Service/service.js',

@@ -1,36 +1,26 @@
 import '../about-committee.html'
 import './scss/main.scss'
 
-/*------------------ tabs click ------------------*/
-const tabs = document.querySelectorAll('.content-tab__item')
+/*------------------ 内容生成 ------------------*/
+const contentCards = document.querySelector('.content-cards')
 
-let currentTab = document.querySelector('.content-tab__item--current')
-tabs.forEach((el,i)=>{
-
-  el.onclick = function (){
-    currentTab.classList.remove('content-tab__item--current')
-    el.classList.toggle('content-tab__item--current')
-    currentTab = el
-
-    /*------------------ 点击第几个tab 执行某块函数 ------------------*/
-    switch (i) {
-      case 0:
-        
-        break;
-      case 1:
-        
-        break;
-      case 2:
-        
-        break;
-      case 3:
-        
-        break;
-    
-      default:
-        break;
-    }
-
-    return false
-  }
-})
+for(let i=0;i<21;i++) {
+  fetch('https://uinames.com/api/?ext')
+  .then(result => {
+    return result.json()
+  })
+  .then(data => {
+    console.log(data)
+    const { name, photo } = data
+    const html = `
+      <div class="content-cards__item">
+        <a href='' class="content-cards__item-img">
+          <figure style="background-image: url(${photo})"></figure>
+          <div class="overlay">${name}</div>
+        </a>
+        <h2>Subscribe to our weekly podcast</h2>
+      </div>
+    `
+    contentCards.innerHTML += html
+  })
+}
