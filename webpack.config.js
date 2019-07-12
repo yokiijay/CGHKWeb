@@ -74,7 +74,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanPlugin(),
+    // new CleanPlugin(),
     /* 每增加一个页面都在这里引入口 + chunks */
     new HtmlPlugin({
       template: './src/index.html',
