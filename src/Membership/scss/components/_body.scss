@@ -9,53 +9,10 @@
   // row-gap: 40px;
 }
 
+/* Aside */
+@import '../../../Common/components/aside';
 .aside-bread {
-  @include flex-start;
-  margin-bottom: 40px;
-
-  &__link {
-    @include font(14px, $text-color-silverblue, $text-family-pingfang-medium);
-    white-space: nowrap;
-    &:hover { color: $text-color-accent }
-  }
-  &__link:last-of-type {
-    color: $text-color-accent;
-  }
-  &__link+&__link::before{
-    content: '/';
-    display: inline;
-    padding: 0 4px;
-    color: $text-color-silverblue;
-  }
-}
-
-.aside-nav {
-  @include font(16px, null, $text-family-pingfang-medium);
-  @include flex-column-start;
-  padding-left: 24px;
-  position: relative;
-  
-  &__link {
-    line-height: 36px;
-
-    &:hover {
-      color: $text-color-accent;
-    }
-  }
-  &__link--current {
-    color: $text-color-accent;
-    @include flex-start;
-    &::before {
-      content: '';
-      width: 4px;
-      height: 16px;
-      border-radius: 2px;
-      background: $text-color-accent;
-      display: inline-block;
-      position: absolute;
-      left: 0;
-    }
-  }
+  margin-bottom: 0;
 }
 
 .content {
