@@ -173,6 +173,7 @@
 }
 
 /*------------------ Screen ------------------*/
+.message-mob { display: none }
 
 @include lg {
   .header {
@@ -183,7 +184,7 @@
     display: none;
   }
   .banner {
-    height: 40vh;
+    height: 300px;
 
     &__wrapper {
       height: inherit;
@@ -198,7 +199,7 @@
   .header-carousel {
     top: 170px;
     &__item {
-      height: 40vh;
+      height: 300px;
     }
     &__title {
       max-width: auto;
@@ -215,6 +216,38 @@
         position: absolute;
         bottom: 0px;
       }
+    }
+  }
+  .message-mob {
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 1.2fr 2fr;
+    grid-column-gap: 20px;
+    background: $bg-color-secondary;
+
+    &__photo {
+      position: relative;
+      overflow: hidden;
+      grid-row: span 4;
+      border-radius: 4px;
+      figure {
+        @include figure {
+          background-image: url(../../../images/president.png);
+        }
+      }
+    }
+    h3 {
+      @include font (20px, null, $text-family-pingfang-thin);
+      margin-bottom: 10px;
+    }
+    h4 {
+      margin-bottom: 6px;
+    }
+    h4,p {
+      @include font(14px, $text-color-accent, $text-family-pingfang-light);
+    }
+    a.linkto {
+      text-align: right;
     }
   }
 }
