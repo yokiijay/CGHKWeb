@@ -1,6 +1,7 @@
 $nav-background: rgba(#262B33, .9);
 $nav-color: $text-color-default;
 
+/*------------------ Nav ------------------*/
 /* nav */
 .nav { 
   background: $nav-background;
@@ -161,4 +162,110 @@ $nav-color: $text-color-default;
     height: 50px;
     opacity: 1;
   }
+}
+
+/*------------------ Nav-mob ------------------*/
+.nav-mob {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: 
+  '. a b'
+  '. c .';
+  justify-items: center;
+  background: $bg-color-secondary;
+  color: $nav-color;
+  height: 170px;
+
+  &__logo {
+    grid-area: a;
+    padding: 30px 30px 15px 30px;
+    min-width: 130px;
+    max-width: 140px;
+    box-sizing: content-box;
+    img {width: 100%;}
+  }
+  .language {
+    grid-area: b;
+    align-self: center;
+    justify-self: center;
+    transform: scale(1.5) translateY(10px);
+  }
+  .menu {
+    grid-area: c;
+    padding: 10px 30px 25px 30px;
+
+    button {
+      @include flex;
+      font-size: 14px;
+      padding: 4px 12px;
+      i { margin-right: 10px; font-size: 14px;}
+    }
+  }
+}
+
+.menu {
+  &:hover {
+    .menu-list {
+      left: 0;
+    }
+  }
+}
+
+.menu-list {
+  width: 70vw;
+  max-width: 470px;
+  position: fixed;
+  z-index: 999;
+  transition: .5s ease;
+  left: -90vw; top: 0;
+  background: $bg-color-secondary;
+  height: 100vh;
+  padding: 70px 30px 0 30px;
+  box-shadow: 10px 0 10px black(20);
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  .arrow-down {
+    transition: .2s;
+    &--inactive {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .divider {
+    border: none;
+    margin: 30px 0;
+    border-bottom: 1px solid #5F6B82;
+  }
+
+  &__sublist {
+    max-height: 0;
+    overflow: hidden;
+    transition: .5s ease;
+    font-size: .8em;
+    
+    li {
+      padding: 10px;
+    }
+    li:first-child {
+      margin-top: 10px;
+    }
+
+    &--active {
+      max-height: 300px;
+    }
+  }
+}
+
+/*------------------ Screen ------------------*/
+
+.nav-mob {
+  display: none;
+}
+
+@include lg {
+  .nav-mob { display: grid; }
+  .nav { display: none; }
 }

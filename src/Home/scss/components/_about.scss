@@ -53,3 +53,29 @@
     }
   }
 }
+
+/*------------------ Screen ------------------*/
+
+@include lg {
+  .about {
+    &__wrapper {
+      padding: 40px 20px;
+    }
+  }
+
+  .about__content {
+    text-align: center;
+    margin-top: 50px;
+    p { font-size: 18px; }
+
+    i {
+      top: initial;
+      right: initial;
+      bottom: -70px;
+      left: 40%;
+      transform: translateX(-50%) scale(.8);
+
+      &.wechat { left: 60%; }
+    }
+  }
+}

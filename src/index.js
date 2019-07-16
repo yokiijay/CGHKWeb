@@ -1,5 +1,6 @@
 import './Home/scss/main.scss'
 import './index.html'
+import './Common/components/nav'
 
 import $ from 'jquery'
 import '../node_modules/slick-carousel/slick/slick'

@@ -130,3 +130,55 @@
     position: relative;
   }
 }
+
+/*------------------ Screen ------------------*/
+
+.event-button { display: none }
+
+@include lg {
+  .event {
+    &__wrapper {
+      padding: 0 20px;
+    }
+
+    &__content {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .event-left {
+    padding: 0;
+    margin-bottom: 20px;
+
+    &__item {
+      height: 100vw;
+      max-height: 600px;
+    }
+
+    &__content {
+      padding: 0;
+
+      h2 { font-size: 24px; }
+      p { font-size: 14px; }
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+  
+  .event-right {
+    &__item {
+      width: auto;
+      margin-bottom: 20px;
+    }
+    
+    &__time { font-size: 24px; }
+    p { font-size: 14px; }
+  }
+  .event-button {
+    display: block;
+    margin-top: 20px;
+  }
+}

@@ -118,3 +118,42 @@
     }
   }
 }
+
+/*------------------ Screen ------------------*/
+
+@include lg {
+  .perspective {
+
+    &__wrapper {
+      padding: 40px 20px 50px 20px;
+    }
+
+    &__title {
+      // padding-bottom: 20px;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .perspective-block1 {
+    flex-wrap: wrap;
+    background: rgba($bg-color-darken,.8) url(../../../images/perspective-1.png) center/cover no-repeat;
+    background-blend-mode: multiply;
+
+    &__left {
+      h2 { font-size: 20px; }
+    }
+    &__right {
+      height: 0;
+    }
+  }
+
+  .perspective-block2 {
+    &__item {
+      margin: 0;
+      margin-bottom: 20px;
+    }
+  }
+}

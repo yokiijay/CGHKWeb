@@ -5,17 +5,13 @@ import axios from 'axios'
 /*------------------ tabs click ------------------*/
 const tabs = document.querySelectorAll('.content-tab__item')
 const contentCards = document.querySelector('.content-cards')
-const loading = document.querySelector('.loading').cloneNode(true)
-const articleBody = document.querySelector('.body')
 
 let currentTab = document.querySelector('.content-tab__item--current')
 tabs.forEach((el,i)=>{
-
   el.onclick = function (){
     currentTab.classList.remove('content-tab__item--current')
     el.classList.toggle('content-tab__item--current')
     currentTab = el
-
     /*------------------ 点击第几个tab 执行某块函数 ------------------*/
     switch (i) {
       case 0:
@@ -39,146 +35,231 @@ tabs.forEach((el,i)=>{
 })
 
 // 接口
-const APIAll = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getAllNewsletters'
-const APIMore = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getMoreNewsletters'
-// All数据变量
-let dataAll = null
-let dataIndex = 0
+const APIAll = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getAll'
+const APIFree = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getFree'
+const APIStandard = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getStandard'
+const APIPreminum = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getPreminum'
 
-axios.get(APIAll) // 从api获取数据
-.then(({ data }) => {
-  dataAll = data
-  all()
-})
-
-function all(){
-  const { riqi, title, caption, img } = dataAll.data.first
-  contentCards.innerHTML = `
-    <div class="content-cards__first">
-      <div class="content-cards__first-left">
-        <span><i class="icon date"></i>${riqi}</span>
-        <h2><a class="hr" href="">${title}</a></h2>
-        <p>${caption}</p>
-      </div>
-      <a href="" class="content-cards__first-right">
-        <figure style="background-image: url(${img})"></figure>
-      </a>
+const loadingHTML = `
+    <div class="loading">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   `
-  const list = dataAll.data.list
-  list.forEach(({riqi, index, caption, img})=>{
-    const html = `
-      <div class="content-cards__item">
-        <a href='' class="content-cards__item-img">
-          <figure style='background-image: url(${img})'></figure>
-          <span><i class="icon date"></i>${riqi}</span>
-          <div class="overlay"></div>
-        </a>
-        <h2>${caption}</h2>
-      </div>
-    `
-    contentCards.innerHTML += html
-    dataIndex = index
-  })
-  if (document.body.offsetHeight < window.innerHeight) bottomAttached()
-}
-function free() {
-  contentCards.innerHTML = ''
-  dataAll.data.list.forEach(({riqi, index, caption, img, type})=>{
-    if (type==='free') {
-      const html = `
-        <div class="content-cards__item">
-          <a href='' class="content-cards__item-img">
-            <figure style='background-image: url(${img})'></figure>
+
+function all(){
+  contentCards.innerHTML = loadingHTML
+  axios.get(APIAll)
+  .then(({data, status})=>{
+    if(status == 200) {
+      const { riqi, img, title, caption, url } = data.first
+      contentCards.innerHTML += `
+        <div class="content-cards__first">
+          <div class="content-cards__first-left">
             <span><i class="icon date"></i>${riqi}</span>
-            <div class="overlay"></div>
+            <h2><a class="hr" href="${url}">${title}</a></h2>
+            <p>${caption}</p>
+          </div>
+          <a href="${url}" class="content-cards__first-right">
+            <figure style='background-image:url(${img})'></figure>
           </a>
-          <h2>${caption}</h2>
         </div>
       `
-      contentCards.innerHTML += html
+      data.list.forEach(({riqi, caption, img, url})=>{
+        contentCards.innerHTML += `
+          <div class="content-cards__item">
+            <a href='${url}' class="content-cards__item-img">
+              <figure style='background-image:url(${img})'></figure>
+              <span><i class="icon date"></i>${riqi}</span>
+              <div class="overlay"></div>
+            </a>
+            <h2>${caption}</h2>
+          </div>
+        `
+      })
+
+      document.querySelector('.loading').classList.toggle('loading--hide', true)
     }
   })
-  if (document.body.offsetHeight < window.innerHeight) bottomAttached()
 }
-function standard() {
-  contentCards.innerHTML = ''
-  dataAll.data.list.forEach(({riqi, index, caption, img, type})=>{
-    if (type==='standard') {
-      const html = `
-        <div class="content-cards__item">
-          <a href='' class="content-cards__item-img">
-            <figure style='background-image: url(${img})'></figure>
-            <span><i class="icon date"></i>${riqi}</span>
-            <div class="overlay"></div>
-          </a>
-          <h2>${caption}</h2>
-        </div>
-      `
-      contentCards.innerHTML += html
+all()
+function free(){
+  contentCards.innerHTML = loadingHTML
+  axios.get(APIFree)
+  .then(({data, status})=>{
+    if(status == 200) {
+      data.list.forEach(({riqi, caption, img, url})=>{
+        contentCards.innerHTML += `
+          <div class="content-cards__item">
+            <a href='${url}' class="content-cards__item-img">
+              <figure style='background-image:url(${img})'></figure>
+              <span><i class="icon date"></i>${riqi}</span>
+              <div class="overlay"></div>
+            </a>
+            <h2>${caption}</h2>
+          </div>
+        `
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+      })
     }
   })
-  if (document.body.offsetHeight < window.innerHeight) bottomAttached()
 }
-function preminum() {
-  contentCards.innerHTML = ''
-  dataAll.data.list.forEach(({riqi, index, caption, img, type})=>{
-    if (type==='preminum') {
-      const html = `
-        <div class="content-cards__item">
-          <a href='' class="content-cards__item-img">
-            <figure style='background-image: url(${img})'></figure>
-            <span><i class="icon date"></i>${riqi}</span>
-            <div class="overlay"></div>
-          </a>
-          <h2>${caption}</h2>
-        </div>
-      `
-      contentCards.innerHTML += html
+function standard(){
+  contentCards.innerHTML = loadingHTML
+  axios.get(APIStandard)
+  .then(({data, status})=>{
+    if(status == 200) {
+      data.list.forEach(({riqi, caption, img, url})=>{
+        contentCards.innerHTML += `
+          <div class="content-cards__item">
+            <a href='${url}' class="content-cards__item-img">
+              <figure style='background-image:url(${img})'></figure>
+              <span><i class="icon date"></i>${riqi}</span>
+              <div class="overlay"></div>
+            </a>
+            <h2>${caption}</h2>
+          </div>
+        `
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+      })
     }
   })
-  if(document.body.offsetHeight<window.innerHeight) bottomAttached()
+}
+function preminum(){
+  contentCards.innerHTML = loadingHTML
+  axios.get(APIPreminum)
+  .then(({data, status})=>{
+    if(status == 200) {
+      data.list.forEach(({riqi, caption, img, url})=>{
+        contentCards.innerHTML += `
+          <div class="content-cards__item">
+            <a href='${url}' class="content-cards__item-img">
+              <figure style='background-image:url(${img})'></figure>
+              <span><i class="icon date"></i>${riqi}</span>
+              <div class="overlay"></div>
+            </a>
+            <h2>${caption}</h2>
+          </div>
+        `
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+      })
+    }
+  })
 }
 
 /*------------------ 触底加载 ------------------*/
-let loadit = true
-window.addEventListener('scroll', function (){
-  const bodyBottom = document.body.getBoundingClientRect().bottom
-  const contentHeight = contentCards.offsetHeight
-  const contentTop = contentCards.offsetTop
-  if (bodyBottom<window.innerHeight+20 && loadit) {
-    loadit = false
-    bottomAttached()
-  }
-})
+window.addEventListener('scroll', handleScrolling)
 
-function bottomAttached() {
-  contentCards.appendChild(loading)
-  axios.get(APIMore+'?index='+dataIndex)
-  .then(({data})=>{
-    console.log( data )
-    loadit = true
-    // 加载完
-    console.log( dataIndex )
-    contentCards.removeChild(loading)
-    dataAll.data.list = dataAll.data.list.concat(data.data.list)
+function handleScrolling(){
+  // 内容底部距离屏幕底部高度
+  const clientBottom = (window.innerHeight - contentCards.getBoundingClientRect().bottom)
+  let loading = true
+  if(clientBottom>300 && contentCards.offsetHeight>window.innerHeight/2 && loading){
+    // 执行当前tab对应的触底加载函数
+    loading = false
     switch(currentTab.innerHTML) {
-      case 'All': 
-        all()
+      case 'All':
+        moreAll()
         break
-      case 'Free': 
-        free()
+      case 'Free':
+        moreFree()
         break
-      case 'Standard': 
-        standard()
+      case 'Standard':
+        moreStandard()
         break
-      case 'Preminum': 
-        preminum()
+      case 'Preminum':
+        morePreminum()
         break
-      default : return
     }
-  })
-  .catch(err=>{
-    console.log( err )
-  })
+  }
+
+  function moreAll(){
+    document.querySelector('.loading').classList.toggle('loading--hide', false)
+    axios.get(APIAll)
+    .then(({data,status})=>{
+      if(status == 200) {
+        data.more.forEach(({ riqi, caption, img, url }) => {
+          contentCards.innerHTML += `
+            <div class="content-cards__item">
+              <a href='${url}' class="content-cards__item-img">
+                <figure style='background-image:url(${img})'></figure>
+                <span><i class="icon date"></i>${riqi}</span>
+                <div class="overlay"></div>
+              </a>
+              <h2>${caption}</h2>
+            </div>
+          `
+        })
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+        loading = true
+      }
+    })
+  }
+  function moreFree(){
+    document.querySelector('.loading').classList.toggle('loading--hide', false)
+    axios.get(APIFree)
+    .then(({data,status})=>{
+      if(status == 200) {
+        data.more.forEach(({ riqi, caption, img, url }) => {
+          contentCards.innerHTML += `
+            <div class="content-cards__item">
+              <a href='${url}' class="content-cards__item-img">
+                <figure style='background-image:url(${img})'></figure>
+                <span><i class="icon date"></i>${riqi}</span>
+                <div class="overlay"></div>
+              </a>
+              <h2>${caption}</h2>
+            </div>
+          `
+        })
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+        loading = true
+      }
+    })
+  }
+  function moreStandard(){
+    document.querySelector('.loading').classList.toggle('loading--hide', false)
+    axios.get(APIStandard)
+    .then(({data,status})=>{
+      if(status == 200) {
+        data.more.forEach(({ riqi, caption, img, url }) => {
+          contentCards.innerHTML += `
+            <div class="content-cards__item">
+              <a href='${url}' class="content-cards__item-img">
+                <figure style='background-image:url(${img})'></figure>
+                <span><i class="icon date"></i>${riqi}</span>
+                <div class="overlay"></div>
+              </a>
+              <h2>${caption}</h2>
+            </div>
+          `
+        })
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+        loading = true
+      }
+    })
+  }
+  function morePreminum(){
+    document.querySelector('.loading').classList.toggle('loading--hide', false)
+    axios.get(APIPreminum)
+    .then(({data,status})=>{
+      if(status == 200) {
+        data.more.forEach(({ riqi, caption, img, url }) => {
+          contentCards.innerHTML += `
+            <div class="content-cards__item">
+              <a href='${url}' class="content-cards__item-img">
+                <figure style='background-image:url(${img})'></figure>
+                <span><i class="icon date"></i>${riqi}</span>
+                <div class="overlay"></div>
+              </a>
+              <h2>${caption}</h2>
+            </div>
+          `
+        })
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+        loading = true
+      }
+    })
+  }
 }

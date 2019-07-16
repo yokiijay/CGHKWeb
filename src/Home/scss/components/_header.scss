@@ -171,3 +171,50 @@
     width: 40px;
   }
 }
+
+/*------------------ Screen ------------------*/
+
+@include lg {
+  .header {
+    height: auto;
+  }
+
+  .banner-message {
+    display: none;
+  }
+  .banner {
+    height: 40vh;
+
+    &__wrapper {
+      height: inherit;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+      @include flex;
+      justify-content: space-between;
+      position: relative;
+    }
+  }
+  .header-carousel {
+    top: 170px;
+    &__item {
+      height: 40vh;
+    }
+    &__title {
+      max-width: auto;
+      padding: 0 20px;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+
+      h1 {
+        max-width: auto;
+        font-size: 24px;
+        font-weight: 100;
+        padding-bottom: 50px;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+  }
+}

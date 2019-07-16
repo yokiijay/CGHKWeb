@@ -335,6 +335,10 @@
   bottom: -290px;
   left: 0;
 
+  &--hide {
+    visibility: hidden;
+  }
+
   span {
     display: inline-block;
     padding: 4px;
