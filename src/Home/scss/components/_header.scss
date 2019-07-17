@@ -185,6 +185,7 @@
   }
   .banner {
     height: 300px;
+    pointer-events: none;
 
     &__wrapper {
       height: inherit;
@@ -198,6 +199,7 @@
   }
   .header-carousel {
     top: 170px;
+    z-index: 0;
     &__item {
       height: 300px;
     }
