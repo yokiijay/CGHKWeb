@@ -70,7 +70,7 @@
 .content-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-gap: 30px;
   position: relative;
   
   &__first {
@@ -364,6 +364,80 @@
     to {
       background: $text-color-accent;
       transform: scale(1.3);
+    }
+  }
+}
+
+/*------------------ Screen ------------------*/
+
+@include lg {
+  .body {
+    display: block;
+    padding: 20px;
+
+    .aside {
+      display: none
+    }
+  }
+  .content {
+    margin-top: 20px;
+
+    &__title {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    &__headline {
+      min-height: auto;
+      padding: 0;
+      display: none;
+
+      span,
+      h2 {
+        padding-left: 30px;
+      }
+
+      span {
+        padding-top: 20px;
+        display: block;
+      }
+
+      h2 {
+        font-size: 34px;
+      }
+
+      &-pic {
+        position: relative;
+        margin: 0 auto;
+        height: 250px;
+        width: 200px;
+        border-radius: 4px;
+        box-shadow: 0 30px 20px black(30);
+      }
+    }
+
+    &__headline::before {
+      display: none;
+    }
+
+    &__main {
+      text-align: left;
+      padding: 10px;
+    }
+
+    &__p {
+      font-size: 16px;
+    }
+  }
+  .content-cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    row-gap: 25px;
+  }
+  .content-cards__item {
+    &-img {
+      min-height: 200px;
+      margin-bottom: 10px;
     }
   }
 }

@@ -204,11 +204,11 @@ $nav-color: $text-color-default;
 }
 
 .menu {
-  &:hover {
-    .menu-list {
-      left: 0;
-    }
-  }
+  // &:hover {
+  //   .menu-list {
+  //     left: 0;
+  //   }
+  // }
 }
 
 .menu-list {
@@ -222,6 +222,8 @@ $nav-color: $text-color-default;
   height: 100vh;
   padding: 70px 30px 0 30px;
   box-shadow: 10px 0 10px black(20);
+
+  &--active { left: 0; }
 
   &__item {
     margin-bottom: 20px;

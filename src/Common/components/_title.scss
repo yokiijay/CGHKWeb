@@ -8,6 +8,5 @@
 @include lg {
   .title {
     @include font(24px, null, $text-family-pingfang-medium);
-    font-weight: bold;
   }
 }

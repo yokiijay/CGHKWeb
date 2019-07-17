@@ -1,6 +1,8 @@
 import '../about-committee.html'
 import './scss/main.scss'
 import axios from 'axios'
+import '../Common/components/nav'
+import '../Common/components/btnFloat'
 
 /*------------------ 内容生成 ------------------*/
 const cardsItems = document.querySelectorAll('.content-cards .content-cards__item')

@@ -17,3 +17,24 @@
 .btn-stroke {
   @extend %btn-stroke;
 }
+
+.btn-float {
+  position: fixed;
+  top: 60px;
+  left: 20px;
+  width: 41px;
+  height: 41px;
+  padding: 0 !important;
+  border-radius: 50%;
+  background: rgba($bg-color-darken, .8);
+  border: 1px solid white(40);
+  i { color: $text-color-default; margin: 0 !important; }
+  transition: .5s cubic-bezier(.79,1.87,.53,.9);
+  transform: scale(0);
+  filter: blur(20px);
+  z-index: 998;
+
+  &:hover {
+    background: $color-primary;
+  }
+}

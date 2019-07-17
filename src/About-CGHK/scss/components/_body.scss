@@ -42,8 +42,6 @@
       position: absolute;
       bottom: -40px;
       overflow: hidden;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
       figure {
         @include figure {
           background: url(../../../images/president.png);
@@ -68,5 +66,79 @@
     line-height: 32px;
     margin-bottom: 32px;
     img { width: 100%; border-radius: 4px; }
+  }
+}
+
+/*------------------ Screen ------------------*/
+.message-mob { display: none; }
+@include lg {
+  .body {
+    display: block;
+    padding: 20px;
+    .aside { display: none }
+  }
+  .content {
+    margin-top: 20px;
+
+    &__title { margin-bottom: 20px; }
+    &__headline {
+      min-height: auto;
+      padding: 0;
+      display: none;
+      span,h2 { padding-left: 30px; }
+      span { padding-top: 20px; display: block;}
+      h2 { font-size: 34px; }
+
+      &-pic {
+        position: relative;
+        margin: 0 auto;
+        height: 250px;
+        width: 200px;
+        border-radius: 4px;
+        box-shadow: 0 30px 20px black(30);
+      }
+    }
+    &__headline::before {
+      display: none;
+    }
+    &__main {
+      text-align: left;
+      padding: 10px;
+    }
+    &__p {
+      font-size: 16px;
+    }
+  }
+
+  .message-mob {
+    display: grid;
+    min-height: 30vw;
+    padding: 0;
+    padding-right: 20px;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 20px;
+    background: $bg-color-secondary;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &__photo {
+      position: relative;
+      overflow: hidden;
+      grid-row: span 4;
+
+      figure {
+        @include figure {
+          background-image: url(../../../images/president.png);
+        }
+      }
+    }
+
+    span {
+      @include font(12px, $text-color-accent, $text-family-pingfang-regular);
+      padding-top: 18px;
+      margin-bottom: 6px;
+    }
+    h2 { @include font(16px, null, $text-family-pingfang-regular); padding-bottom: 20px; }
   }
 }

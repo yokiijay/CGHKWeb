@@ -1,6 +1,8 @@
 import '../service.html'
 import './scss/main.scss'
 import axios from 'axios'
+import '../Common/components/nav'
+import '../Common/components/btnFloat'
 
 /*------------------ tabs click ------------------*/
 const tabs = document.querySelectorAll('.content-tab__item')

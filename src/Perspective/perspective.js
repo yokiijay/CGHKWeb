@@ -1,6 +1,8 @@
 import '../perspective.html'
 import './scss/main.scss'
 import './voice'
+import '../Common/components/nav'
+import '../Common/components/btnFloat'
 
 /*------------------ tabs click ------------------*/
 const tabs = document.querySelectorAll('.content-tab__item')
