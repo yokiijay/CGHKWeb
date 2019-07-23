@@ -4,23 +4,38 @@ import axios from 'axios'
 import '../Common/components/nav'
 import '../Common/components/btnFloat'
 
-/*------------------ 内容生成 ------------------*/
-const cardsItems = document.querySelectorAll('.content-cards .content-cards__item')
+/*------------------ 异步加载 ------------------*/
+let loading = true
+const contentCards = document.querySelector('.content-cards')
+const oLoading = document.querySelector('.loading')
 
-cardsItems.forEach((el,i)=>{
-  const figure = el.querySelector('figure')
-  const overlay = el.querySelector('.overlay')
-  const h2 = el.querySelector('h2')
-
-  setTimeout(() => {
-    axios.get('https://uinames.com/api/?region=United States&ext')
-    .then(({data})=>{
-      console.log( data )
-      const { name, photo, email } = data
-      figure.style.backgroundImage = `url(${photo})`
-      overlay.innerHTML = name
-      h2.innerHTML = email
-    })
-  }, i*100);
-
+window.addEventListener('scroll', () => {
+  const clientBottom = (window.innerHeight - contentCards.getBoundingClientRect().bottom)
+  if (clientBottom > 300 && contentCards.offsetHeight > window.innerHeight / 2 && loading) {
+    loading = false
+    oLoading.style.visibility = 'visible'
+    loadMore('contentCards.dataset.url')
+  }
 })
+
+function loadMore(url) {
+  axios.get(url)
+    .then(data => {
+      if (data.status !== 200) return
+      const { moreList } = data.data
+      moreList.forEach((list) => {
+        const html = `
+          <div class="content-cards__item">
+            <a href='${list.url}' class="content-cards__item-img">
+              <figure style="background-image:url(${list.img})"></figure>
+              <div class="overlay">${list.name}</div>
+            </a>
+            <h2>${list.h2}</h2>
+          </div>
+        `
+        contentCards.innerHTML += html
+      })
+      oLoading.style.visibility = 'hidden'
+      loading = true
+    })
+}

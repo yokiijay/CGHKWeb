@@ -11,6 +11,7 @@ module.exports = {
     'about-CGHK': './src/About-CGHK/about-CGHK.js',
     'about': './src/About/about.js',
     'about-committee': './src/About-committee/about-committee.js',
+    'about-committee-link': './src/About-committee-link/about-committee-link.js',
     'perspective': './src/Perspective/perspective.js',
     'events': './src/Events/events.js',
     'service': './src/Service/service.js',
@@ -145,6 +146,11 @@ module.exports = {
       template: './src/about-committee.html',
       filename: 'about-committee.html',
       chunks: ['about-committee']
+    }),
+    new HtmlPlugin({
+      template: './src/about-committee-link.html',
+      filename: 'about-committee-link.html',
+      chunks: ['about-committee-link']
     }),
   ]
 }

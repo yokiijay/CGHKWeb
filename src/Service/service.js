@@ -162,26 +162,26 @@ function handleScrolling(){
     loading = false
     switch(currentTab.innerHTML) {
       case 'All':
-        moreAll()
+        moreAll('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/service/getMore')
         break
       case 'Free':
-        moreFree()
+        moreFree('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/service/getMore')
         break
       case 'Standard':
-        moreStandard()
+        moreStandard('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/service/getMore')
         break
       case 'Preminum':
-        morePreminum()
+        morePreminum('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/service/getMore')
         break
     }
   }
 
-  function moreAll(){
+  function moreAll(url){
     document.querySelector('.loading').classList.toggle('loading--hide', false)
-    axios.get(APIAll)
+    axios.get(url)
     .then(({data,status})=>{
       if(status == 200) {
-        data.more.forEach(({ riqi, caption, img, url }) => {
+        data.moreList.forEach(({ riqi, caption, img, url }) => {
           contentCards.innerHTML += `
             <div class="content-cards__item">
               <a href='${url}' class="content-cards__item-img">
@@ -198,12 +198,12 @@ function handleScrolling(){
       }
     })
   }
-  function moreFree(){
+  function moreFree(url){
     document.querySelector('.loading').classList.toggle('loading--hide', false)
-    axios.get(APIFree)
+    axios.get(url)
     .then(({data,status})=>{
       if(status == 200) {
-        data.more.forEach(({ riqi, caption, img, url }) => {
+        data.moreList.forEach(({ riqi, caption, img, url }) => {
           contentCards.innerHTML += `
             <div class="content-cards__item">
               <a href='${url}' class="content-cards__item-img">
@@ -220,12 +220,12 @@ function handleScrolling(){
       }
     })
   }
-  function moreStandard(){
+  function moreStandard(url){
     document.querySelector('.loading').classList.toggle('loading--hide', false)
-    axios.get(APIStandard)
+    axios.get(url)
     .then(({data,status})=>{
       if(status == 200) {
-        data.more.forEach(({ riqi, caption, img, url }) => {
+        data.moreList.forEach(({ riqi, caption, img, url }) => {
           contentCards.innerHTML += `
             <div class="content-cards__item">
               <a href='${url}' class="content-cards__item-img">
@@ -242,12 +242,12 @@ function handleScrolling(){
       }
     })
   }
-  function morePreminum(){
+  function morePreminum(url){
     document.querySelector('.loading').classList.toggle('loading--hide', false)
-    axios.get(APIPreminum)
+    axios.get(url)
     .then(({data,status})=>{
       if(status == 200) {
-        data.more.forEach(({ riqi, caption, img, url }) => {
+        data.moreList.forEach(({ riqi, caption, img, url }) => {
           contentCards.innerHTML += `
             <div class="content-cards__item">
               <a href='${url}' class="content-cards__item-img">
