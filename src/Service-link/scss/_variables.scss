@@ -1,0 +1,82 @@
+
+/*------------------ 颜色 ------------------*/
+/* 
+  粒子颜色
+
+    灰度颜色
+      color-light-100
+      color-light-200
+      color-light-300
+      color-dark-400
+      color-dark-500
+      color-dark-600
+      color-dark-700
+
+      color-white-10
+      ...
+      color-white-90
+      color-white
+
+      color-black-10
+      ...
+      color-black-90
+      color-black
+
+  组件颜色
+    文字
+*/
+
+$color-primary: #5EABFF;
+
+$color-white: #ffffff;
+$color-light-0: #f8f8fb;
+$color-light-100: #eeeeee;
+$color-light-200: #aaaaaa;
+$color-light-300: #888888;
+$color-black: #000000;
+$color-dark-400: #666666;
+$color-dark-500: #444444;
+$color-dark-600: #222222;
+
+// white(10) will return rgba(255,255,255,.1)
+@function white($num) {
+  @return rgba(255,255,255,$num/100);
+}
+// black(10) will return rgba(0,0,0,.1)
+@function black($num) {
+  @return rgba(0,0,0,$num/100);
+}
+
+// Bg
+$bg-color-primary: #48546C;
+$bg-color-secondary: #303642;
+$bg-color-darken: #252933;
+
+// Typography
+$text-color-default: #eeeeee;
+$text-color-lightblue: #CFD6E6;
+$text-color-greyblue: #ADB8CC;
+$text-color-accent: $color-primary;
+$text-color-silverblue: #B3D9FF;
+
+$text-family-pingfang-thin: PingFangSC-Thin;
+$text-family-pingfang-light: PingFangSC-Light;
+$text-family-pingfang-regular: PingFangSC-Regular;
+$text-family-pingfang-medium: PingFangSC-Medium;
+$text-family-pingfang-semibold: PingFangSC-Semibold;
+
+// Borders
+$border-color: $color-light-100;
+
+/*------------------ Grid ------------------*/
+// Breakpoints
+$screen-sm-max: 575px !default;
+$screen-md-max: 768px !default;
+$screen-lg-max: 992px !default;
+$screen-xl-max: 1200px !default;
+
+// Columns
+$grid-columns: 12 !default;
+
+// Gutter
+$grid-gutter-width: 30px !default;

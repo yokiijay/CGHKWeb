@@ -109,7 +109,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           ${list.p?`
             <p>${list.p}</p>
           `:''}
-          <a href="${list.href}" class="linkto">Keep reading<i class="icon readmore"></i></a>
+          <a href="${list.url}" class="linkto">Keep reading<i class="icon readmore"></i></a>
         </div>
       `
       cols[0].innerHTML += html
@@ -159,7 +159,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           ${list.p?`
             <p>${list.p}</p>
           `:''}
-          <a href="${list.href}" class="linkto">Keep reading<i class="icon readmore"></i></a>
+          <a href="${list.url}" class="linkto">Keep reading<i class="icon readmore"></i></a>
         </div>
       `
       cols[1].innerHTML += html
@@ -209,7 +209,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           ${list.p?`
             <p>${list.p}</p>
           `:''}
-          <a href="${list.href}" class="linkto">Keep reading<i class="icon readmore"></i></a>
+          <a href="${list.url}" class="linkto">Keep reading<i class="icon readmore"></i></a>
         </div>
       `
       cols[2].innerHTML += html
@@ -226,8 +226,8 @@ window.addEventListener('scroll', ()=>{
 })
 
 function handleScrolling() {
-  const cols = document.querySelectorAll('.content-cards__col')
-
+  let cols = document.querySelectorAll('.content-cards__col')
+  if(window.innerWidth<992) cols = Array.from(cols).splice(2,1)
   cols.forEach(col=>{
     // 内容底部距离屏幕底部高度
     const clientBottom = (window.innerHeight - col.getBoundingClientRect().bottom)
@@ -302,7 +302,7 @@ function handleScrolling() {
               ${list.p ? `
                 <p>${list.p}</p>
               `: ''}
-              <a href="${list.href}" class="linkto">Keep reading<i class="icon readmore"></i></a>
+              <a href="${list.url}" class="linkto">Keep reading<i class="icon readmore"></i></a>
             </div>
           `
           col.innerHTML += html

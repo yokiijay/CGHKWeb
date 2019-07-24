@@ -14,8 +14,9 @@ module.exports = {
     'about-committee': './src/About-committee/about-committee.js',
     'about-committee-link': './src/About-committee-link/about-committee-link.js',
     'perspective': './src/Perspective/perspective.js',
+    'perspective-link': './src/Perspective-link/perspective-link.js',
     'events': './src/Events/events.js',
-    'service': './src/Service/service.js',
+    'service-link': './src/Service-link/service-link.js',
     'membership': './src/Membership/membership.js',
     'private-policy': './src/Private-Policy/private-policy.js',
     'service-research': './src/Service-Research/service-research.js',
@@ -93,6 +94,11 @@ module.exports = {
       chunks: ['perspective']
     }),
     new HtmlPlugin({
+      template: './src/perspective-link.html',
+      filename: 'perspective-link.html',
+      chunks: ['perspective-link']
+    }),
+    new HtmlPlugin({
       template: './src/events.html',
       filename: 'events.html',
       chunks: ['events']
@@ -101,6 +107,11 @@ module.exports = {
       template: './src/service.html',
       filename: 'service.html',
       chunks: ['service']
+    }),
+    new HtmlPlugin({
+      template: './src/service-link.html',
+      filename: 'service-link.html',
+      chunks: ['service-link']
     }),
     new HtmlPlugin({
       template: './src/membership.html',

@@ -1,12 +1,20 @@
 .title {
   @include flex-start;
   @include font(48px, null, $text-family-pingfang-thin);
-  img { padding-right: 15px }
+  img {
+    padding-right: 15px;
+    align-self: flex-start;
+    position: relative;
+    top: 20px;
+  }
 }
 
 /*------------------ Screen ------------------*/
 @include lg {
   .title {
     @include font(24px, null, $text-family-pingfang-medium);
+    img {
+      top: 0;
+    }
   }
 }
