@@ -148,7 +148,7 @@ $nav-color: $text-color-default;
 
     img { display: block }
     li:first-of-type {
-      margin-bottom: 8px;
+      margin-bottom: 0px;
     }
     li {
       opacity: .8;
@@ -189,6 +189,12 @@ $nav-color: $text-color-default;
     align-self: center;
     justify-self: center;
     transform: scale(1.5) translateY(10px);
+
+    &__item {
+      li:first-of-type {
+        margin-bottom: 8px;
+      }
+    }
   }
   .menu {
     grid-area: c;

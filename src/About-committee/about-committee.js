@@ -6,6 +6,7 @@ import '../Common/components/btnFloat'
 
 /*------------------ 异步加载 ------------------*/
 let loading = true
+let page = 0
 const contentCards = document.querySelector('.content-cards')
 const oLoading = document.querySelector('.loading')
 
@@ -14,7 +15,7 @@ window.addEventListener('scroll', () => {
   if (clientBottom > 300 && contentCards.offsetHeight > window.innerHeight / 2 && loading) {
     loading = false
     oLoading.style.visibility = 'visible'
-    loadMore('contentCards.dataset.url')
+    loadMore(APIMore + `?page=${page}`)
   }
 })
 
@@ -22,6 +23,7 @@ function loadMore(url) {
   axios.get(url)
     .then(data => {
       if (data.status !== 200) return
+      page ++ // 每次触底page+1
       const { moreList } = data.data
       moreList.forEach((list) => {
         const html = `

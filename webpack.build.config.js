@@ -8,6 +8,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 module.exports = {
   mode: 'production',
   entry: {
+    /* 每增加一个页面都在这里引入口 */
     index: './src/index.js',
     'about-CGHK': './src/About-CGHK/about-CGHK.js',
     'about': './src/About/about.js',
@@ -16,6 +17,7 @@ module.exports = {
     'perspective': './src/Perspective/perspective.js',
     'perspective-link': './src/Perspective-link/perspective-link.js',
     'events': './src/Events/events.js',
+    'service': './src/Service/service.js',
     'service-link': './src/Service-link/service-link.js',
     'membership': './src/Membership/membership.js',
     'private-policy': './src/Private-Policy/private-policy.js',
@@ -69,10 +71,13 @@ module.exports = {
     ]
   },
   optimization: {
-    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+    // minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
   plugins: [
-    new CleanPlugin(),
+    new CleanPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*', '!api', '!api/*', '!api/*/*'],
+    }),
+    /* 每增加一个页面都在这里引入口 + chunks */
     new HtmlPlugin({
       template: './src/index.html',
       filename: 'index.html',
@@ -147,6 +152,11 @@ module.exports = {
       template: './src/media.html',
       filename: 'media.html',
       chunks: ['media']
+    }),
+    new HtmlPlugin({
+      template: './src/about-committee.html',
+      filename: 'about-committee.html',
+      chunks: ['about-committee']
     }),
     new HtmlPlugin({
       template: './src/about-committee-link.html',

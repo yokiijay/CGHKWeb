@@ -47,9 +47,33 @@
     top: 25%;
     right: 20%;
     cursor: pointer;
+    
 
     &.wechat {
       right: 10%;
+    }
+
+    &.wechat::after {
+      content: '';
+      position: absolute;
+      bottom: 45px;
+      left: -60px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: 160px;
+      height: 160px;
+      border-radius: 4px;
+      // background: white;
+      background: white url(http://i9.hexun.com/2018-07-09/193397294.jpg) center/cover no-repeat;
+      transform-origin: center bottom;
+      transform: scale(.4);
+      opacity: 0;
+      transition: .3s ease-out;
+    }
+    &.wechat:hover::after{
+      transform: scale(1) rotate(0);
+      opacity: 2;
     }
   }
 }

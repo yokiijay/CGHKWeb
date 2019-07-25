@@ -13,26 +13,28 @@ loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspectiv
 const tabs = document.querySelectorAll('.content-tab__item')
 
 let currentTab = document.querySelector('.content-tab__item--current')
-tabs.forEach((el,i)=>{
+let page = 0 // 触底页数计数
 
+tabs.forEach((el,i)=>{
   el.onclick = function (){
     currentTab.classList.remove('content-tab__item--current')
     el.classList.toggle('content-tab__item--current')
     currentTab = el
+    page = 0 // 重置页数
 
     /*------------------ 点击第几个tab 执行某块函数 ------------------*/
     switch(currentTab.innerHTML) {
       case 'All':
-        loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getAll')
+        loadInitial(APIAll + `?tab=All`)
         break
       case 'Take on top news':
-        loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getAll')
+        loadInitial(APIAll + `?tab=Take on top news`)
         break
       case 'Podcast':
-        loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getAll')
+        loadInitial(APIAll + `?tab=Podcast`)
         break
       case 'Discussion':
-        loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getAll')
+        loadInitial(APIAll + `?tab=Discussion`)
         break
     }
   }
@@ -237,16 +239,16 @@ function handleScrolling() {
       col.loading = true
       switch (currentTab.innerHTML) {
         case 'All':
-          loadMore('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getMore', col)
+          loadMore(APIMore + `?tab=All&page=${page}`, col)
           break
         case 'Take on top news':
-          loadMore('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getMore', col)
+          loadMore(APIMore + `?tab=Take on top news&page=${page}`, col)
           break
         case 'Podcast':
-          loadMore('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getMore', col)
+          loadMore(APIMore + `?tab=Podcast&page=${page}`, col)
           break
         case 'Discussion':
-          loadMore('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getMore', col)
+          loadMore(APIMore + `?tab=Discussion&page=${page}`, col)
           break
       }
     }
@@ -257,7 +259,9 @@ function handleScrolling() {
       axios.get(url) // 异步拿数据
       .then(data => {
         if (data.status !== 200) return
+        page ++ //每次触底page+1
         const { list } = data.data
+        console.log( data )
         list.forEach(list=>{
           const html = `
             <div class="content-cards__item">
