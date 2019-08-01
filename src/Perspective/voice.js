@@ -9,20 +9,27 @@ export default function refreshVoices(){
     const audioOval = el.querySelector('.voice__slider-progress-oval')
     const audioIcon = el.querySelector('.icon-voice')
   
-    audioEl.oncanplay = ()=>{
-      // 点击喇叭播放/暂停
-      audioBtn.addEventListener('click',()=>{
-        // audioEl.currentTime = 0
+    // 点击喇叭播放/暂停
+    audioBtn.addEventListener('click',()=>{
+      if (audioEl.readyState === 0) {
+        audioEl.load()
+      }else {
         audioEl.paused && audioEl.play() || audioEl.pause()
+      }
+    })
+    audioEl.addEventListener('canplay', ()=>{
+      audioEl.play()
+    })
+
+    // 播放时oval动画开始
+    audioEl.addEventListener('play', ()=>{
+      document.querySelectorAll('audio').forEach(el=>{
+        if(el!==audioEl)el.pause()
       })
-      // 播放时oval动画开始
-      audioEl.addEventListener('play', ()=>{
-        document.querySelectorAll('audio').forEach(el=>{
-          if(el!==audioEl)el.pause()
-        })
-        audioOval.classList.toggle('voice__slider-progress-oval--active', true)
-        audioIcon.classList.toggle('icon--active', true)
-      })
+      audioOval.classList.toggle('voice__slider-progress-oval--active', true)
+      audioIcon.classList.toggle('icon--active', true)
+    })
+    audioEl.oncanplay = ()=>{
       // 播放时oval动画停止
       audioEl.addEventListener('pause', ()=>{
         audioOval.classList.toggle('voice__slider-progress-oval--active', false)

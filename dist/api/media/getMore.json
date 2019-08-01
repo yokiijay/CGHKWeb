@@ -9,5 +9,6 @@
     },
     { "url": "/", "img": "https://picsum.photos/300/300?random1", "date": "Jun 28, 2019", "h3": "Examining Healthcare", "p": "America has few “full service” think tanks for a very simple reason: It’s not easy to assemble and develop talent in a wide range of disciplines." },
     { "url": "/", "img": "https://picsum.photos/300/300?random1", "date": "Jun 28, 2019", "h3": "Examining Healthcare", "p": "America has few “full service” think tanks for a very simple reason: It’s not easy to assemble and develop talent in a wide range of disciplines." }
-  ]
+  ],
+  "finished": false
 }

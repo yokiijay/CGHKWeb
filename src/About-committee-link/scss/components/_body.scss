@@ -2,7 +2,7 @@
   display: grid;
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 468px;
+  margin-bottom: 260px;
   padding: 30px 90px;
   grid-template-columns: minmax(auto, 227px) 1fr;
   column-gap: 80px;
@@ -95,10 +95,7 @@
       text-indent: 3px;
     }
   }
-  &__link {
-    display: inline-block;
-    color: $text-color-accent;
-  }
+  
 }
 
 /*------------------ Screen ------------------*/

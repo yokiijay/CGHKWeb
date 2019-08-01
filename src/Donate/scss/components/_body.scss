@@ -2,7 +2,7 @@
   // display: grid;
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 468px;
+  margin-bottom: 260px;
   padding: 30px 90px;
   // grid-template-columns: minmax(auto, 227px) 1fr;
   // column-gap: 80px;
@@ -59,14 +59,14 @@
   &__main {
     text-align: justify;
   }
-  &__subtitle {
+  h2 {
     @include font(28px, $text-color-lightblue, $text-family-pingfang-light);
     margin-top: 50px;
     margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba($text-color-greyblue, .4);
   }
-  &__p {
+  p {
     @include font(18px, null, $text-family-pingfang-regular);
     line-height: 32px;
     margin-bottom: 32px;
@@ -169,7 +169,7 @@
       padding: 10px;
     }
 
-    &__p {
+    p {
       font-size: 16px;
     }
   }

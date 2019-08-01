@@ -37,14 +37,20 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 30px;
+  margin-bottom: 60px;
 
+  &__top {
+    grid-column: span 12;
+    display: flex;
+  }
   &__left {
-    grid-column: span 7;
+    flex: 1 auto;
     position: relative;
     overflow: hidden;
     min-height: 600px;
     display: flex;
     border-radius: 4px;
+    margin-right: 30px;
 
     figure {
       @include figure {
@@ -72,7 +78,7 @@
     }
   }
   &__right {
-    grid-column: 8 / span 5;
+    flex: 1 auto;
     position: relative;
     overflow: hidden;
     min-height: 600px;
@@ -177,6 +183,30 @@
     border-left: 1px solid #48546C;
     @include font(16px, $text-color-greyblue, $text-family-pingfang-medium);
     span+span { margin-top: 10px; display: block; }
+  }
+
+  &__upcoming,
+  &__past {
+    grid-column: span 12;
+    text-align: center;
+    @include font(24px, $text-color-accent, $text-family-pingfang-medium);
+    border-bottom: 1px solid rgba($text-color-accent, .4);
+    margin-bottom: 20px;
+    h3 {
+      display: inline-block;
+      padding-bottom: 4px;
+      border-bottom: 3px solid $text-color-accent;
+    }
+  }
+  &__viewall {
+    grid-column: span 12;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    a.btn-stroke {
+      padding: 8px 28px;
+    }
   }
 }
 
@@ -285,11 +315,16 @@
     grid-row-gap: 25px;
     // margin: 0 -10px;
 
+    &__top {
+      flex-wrap: wrap;
+    }
     &__left {
-      grid-column: span 12;
       height: 100vw;
       min-height: initial;
       max-height: 600px;
+      margin-right: 0;
+      margin-bottom: 30px;
+      flex-shrink: none;
     }
     &__left-content {
       padding: 20px 20px 30px;
@@ -299,16 +334,28 @@
     }
 
     &__right {
-      grid-column: span 12;
       height: 100vw;
       min-height: initial;
       max-height: 600px;
+      flex-shrink: none;
     }
     &__right-content {
       padding: 20px 20px 30px;
       width: 100%;
       h2 { font-size: 24px; }
       p { font-size: 14px; }
+    }
+
+    &__viewall {
+      margin-top: 10px;
+      margin-bottom: 0px;
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__upcoming, &__past {
+      border-bottom: none;
     }
   }
 

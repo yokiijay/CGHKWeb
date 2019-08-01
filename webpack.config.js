@@ -15,6 +15,8 @@ module.exports = {
     'perspective': './src/Perspective/perspective.js',
     'perspective-link': './src/Perspective-link/perspective-link.js',
     'events': './src/Events/events.js',
+    'events-list': './src/Events-list/events-list.js',
+    'events-link': './src/Events-link/events-link.js',
     'service': './src/Service/service.js',
     'service-link': './src/Service-link/service-link.js',
     'membership': './src/Membership/membership.js',
@@ -108,6 +110,16 @@ module.exports = {
       template: './src/events.html',
       filename: 'events.html',
       chunks: ['events']
+    }),
+    new HtmlPlugin({
+      template: './src/events-list.html',
+      filename: 'events-list.html',
+      chunks: ['events-list']
+    }),
+    new HtmlPlugin({
+      template: './src/events-link.html',
+      filename: 'events-link.html',
+      chunks: ['events-link']
     }),
     new HtmlPlugin({
       template: './src/service.html',

@@ -114,10 +114,10 @@ function getOthers(url){
 /*------------------ 触底加载 ------------------*/
 window.addEventListener('scroll', handleScrolling)
 
+let loading = true
 function handleScrolling(){
   // 内容底部距离屏幕底部高度
   const clientBottom = (window.innerHeight - contentCards.getBoundingClientRect().bottom)
-  let loading = true
   if(clientBottom>300 && contentCards.offsetHeight>window.innerHeight/2 && loading){
     // 执行当前tab对应的触底加载函数
     loading = false
@@ -141,6 +141,12 @@ function handleScrolling(){
     document.querySelector('.loading').classList.toggle('loading--hide', false)
     axios.get(url)
     .then(({data,status})=>{
+      // 如果结束就隐藏loading图标 返回函数
+      if (data.finished) {
+        document.querySelector('.loading').classList.toggle('loading--hide', true)
+        return
+      }
+
       if(status == 200) {
         page ++ // 每次触底都增加1page
         data.moreList.forEach(({ riqi, caption, img, url }) => {

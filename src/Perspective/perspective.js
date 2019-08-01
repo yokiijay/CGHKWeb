@@ -7,7 +7,20 @@ import axios from 'axios'
 import voice from './voice'
 
 /*------------------ inital ------------------*/
-loadInitial('https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/perspective/getAll')
+switch (document.querySelector('.content-tab__item--current').innerHTML) {
+  case 'All':
+    loadInitial(APIAll + `?tab=All`)
+    break
+  case 'Take on top news':
+    loadInitial(APIAll + `?tab=Take on top news`)
+    break
+  case 'Podcast':
+    loadInitial(APIAll + `?tab=Podcast`)
+    break
+  case 'Discussion and Debate':
+    loadInitial(APIAll + `?tab=Discussion and Debate`)
+    break
+}
 
 /*------------------ tabs click ------------------*/
 const tabs = document.querySelectorAll('.content-tab__item')
@@ -33,8 +46,8 @@ tabs.forEach((el,i)=>{
       case 'Podcast':
         loadInitial(APIAll + `?tab=Podcast`)
         break
-      case 'Discussion':
-        loadInitial(APIAll + `?tab=Discussion`)
+      case 'Discussion and Debate':
+        loadInitial(APIAll + `?tab=Discussion and Debate`)
         break
     }
   }
@@ -73,7 +86,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           <span>${list.date}</span>
           ${list.voice?`
             <div class="voice content-cards__item-voice">
-              <audio src="${list.voice.src}"></audio>
+              <audio preload="none" src="${list.voice.src}"></audio>
               <i class="icon icon-voice"></i>
               <p>${list.voice.p}</p>
               <div class="voice__slider">
@@ -123,7 +136,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           <span>${list.date}</span>
           ${list.voice?`
             <div class="voice content-cards__item-voice">
-              <audio src="${list.voice.src}"></audio>
+              <audio preload="none" src="${list.voice.src}"></audio>
               <i class="icon icon-voice"></i>
               <p>${list.voice.p}</p>
               <div class="voice__slider">
@@ -173,7 +186,7 @@ function loadInitial(url){ // 获取第一屏15个卡片的数据
           <span>${list.date}</span>
           ${list.voice?`
             <div class="voice content-cards__item-voice">
-              <audio src="${list.voice.src}"></audio>
+              <audio preload="none" src="${list.voice.src}"></audio>
               <i class="icon icon-voice"></i>
               <p>${list.voice.p}</p>
               <div class="voice__slider">
@@ -230,25 +243,27 @@ window.addEventListener('scroll', ()=>{
 function handleScrolling() {
   let cols = document.querySelectorAll('.content-cards__col')
   if(window.innerWidth<992) cols = Array.from(cols).splice(2,1)
-  cols.forEach(col=>{
+  cols.forEach((col,index)=>{
     // 内容底部距离屏幕底部高度
-    const clientBottom = (window.innerHeight - col.getBoundingClientRect().bottom)
+    const lastCard = col.querySelector('.content-cards__item:last-child')
+    if(!lastCard) return
+    const clientBottom = (window.innerHeight - lastCard.getBoundingClientRect().bottom)
     // 距离底部300 && 不在第一屏 && 允许加载
     if (clientBottom > 300 && col.offsetHeight > window.innerHeight / 2 && !col.loading) {
       // 执行当前tab对应的触底加载函数
       col.loading = true
       switch (currentTab.innerHTML) {
         case 'All':
-          loadMore(APIMore + `?tab=All&page=${page}`, col)
+          loadMore(APIMore + `?tab=All&page=${page+index}`, col)
           break
         case 'Take on top news':
-          loadMore(APIMore + `?tab=Take on top news&page=${page}`, col)
+          loadMore(APIMore + `?tab=Take on top news&page=${page+index}`, col)
           break
         case 'Podcast':
-          loadMore(APIMore + `?tab=Podcast&page=${page}`, col)
+          loadMore(APIMore + `?tab=Podcast&page=${page+index}`, col)
           break
         case 'Discussion':
-          loadMore(APIMore + `?tab=Discussion&page=${page}`, col)
+          loadMore(APIMore + `?tab=Discussion and Debate&page=${page+index}`, col)
           break
       }
     }
@@ -258,17 +273,24 @@ function handleScrolling() {
       oLoading.style.visibility = 'visible'
       axios.get(url) // 异步拿数据
       .then(data => {
+        // 如果结束就隐藏loading图标 返回函数
+        if(data.data.finished) {
+          oLoading.style.visibility = 'hidden'
+          return          
+        }
+        
+        // 服务器不响应就返回函数
         if (data.status !== 200) return
+
         page ++ //每次触底page+1
         const { list } = data.data
-        console.log( data )
         list.forEach(list=>{
           const html = `
             <div class="content-cards__item">
               <span>${list.date}</span>
               ${list.voice ? `
                 <div class="voice content-cards__item-voice">
-                  <audio src="${list.voice.src}"></audio>
+                  <audio preload="none" src="${list.voice.src}"></audio>
                   <i class="icon icon-voice"></i>
                   <p>${list.voice.p}</p>
                   <div class="voice__slider">

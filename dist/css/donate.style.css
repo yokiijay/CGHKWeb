@@ -627,7 +627,7 @@ figure {
 .body {
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 468px;
+  margin-bottom: 260px;
   padding: 30px 90px; }
 
 /* Aside */
@@ -758,7 +758,7 @@ figure {
     left: 100%; }
   .content__main {
     text-align: justify; }
-  .content__subtitle {
+  .content h2 {
     font-size: 28px;
     color: #CFD6E6;
     font-family: PingFangSC-Light;
@@ -766,17 +766,17 @@ figure {
     margin-bottom: 20px;
     padding-bottom: 8px;
     border-bottom: 1px solid rgba(173, 184, 204, 0.4); }
-  .content__p {
+  .content p {
     font-size: 18px;
     font-family: PingFangSC-Regular;
     line-height: 32px;
     margin-bottom: 32px; }
-    .content__p img {
+    .content p img {
       width: 100%;
       border-radius: 4px; }
-    .content__p em {
+    .content p em {
       color: #B3D9FF; }
-    .content__p a {
+    .content p a {
       display: inline;
       color: #5EABFF; }
   .content__card {
@@ -835,7 +835,7 @@ figure {
     .content__main {
       text-align: left;
       padding: 10px; }
-    .content__p {
+    .content p {
       font-size: 16px; }
   .content-cards {
     grid-template-columns: repeat(2, 1fr);

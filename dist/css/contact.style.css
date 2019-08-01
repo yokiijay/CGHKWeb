@@ -628,7 +628,7 @@ figure {
   display: grid;
   max-width: 1280px;
   margin: 0 auto;
-  margin-bottom: 468px;
+  margin-bottom: 260px;
   padding: 30px 90px;
   grid-template-columns: minmax(auto, 227px) 1fr;
   -webkit-column-gap: 80px;
@@ -764,17 +764,17 @@ figure {
     left: 100%; }
   .content__main {
     text-align: justify; }
-  .content__p {
+  .content p {
     font-size: 18px;
     font-family: PingFangSC-Regular;
     line-height: 32px;
     margin-bottom: 32px; }
-    .content__p img {
+    .content p img {
       width: 100%;
       border-radius: 4px; }
-    .content__p em {
+    .content p em {
       color: #B3D9FF; }
-    .content__p a {
+    .content p a {
       display: inline;
       color: #5EABFF; }
 
@@ -814,7 +814,7 @@ figure {
     .content__main {
       text-align: left;
       padding: 10px; }
-    .content__p {
+    .content p {
       font-size: 16px; }
   .content-cards {
     grid-template-columns: repeat(2, 1fr);

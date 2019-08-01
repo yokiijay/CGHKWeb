@@ -762,6 +762,8 @@ figure {
     background: #5F6B82;
     position: absolute;
     left: -30px; }
+  .content-tab__item:last-child {
+    padding-right: 40px; }
 
 .content-cards {
   display: grid;
@@ -1159,9 +1161,12 @@ figure {
   .content-tab {
     -webkit-box-pack: start;
             justify-content: flex-start;
-    margin: 0 -30px 30px;
+    margin: 0 -30px 10px;
     padding: 20px;
-    padding-bottom: 20px; }
+    padding-bottom: 20px;
+    overflow-x: scroll; }
+    .content-tab::-webkit-scrollbar {
+      background-color: transparent; }
     .content-tab__item {
       margin: 0;
       font-size: 14px;

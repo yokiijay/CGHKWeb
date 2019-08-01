@@ -22,7 +22,15 @@ window.addEventListener('scroll', () => {
 function loadMore(url) {
   axios.get(url)
     .then(data => {
+      // 如果结束就隐藏loading图标 返回函数
+      if (data.data.finished) {
+        oLoading.style.visibility = 'hidden'
+        return
+      }
+
+      // 服务器不响应就返回函数
       if (data.status !== 200) return
+
       page ++ // 每次触底page+1
       const { moreList } = data.data
       moreList.forEach((list) => {

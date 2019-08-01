@@ -21,23 +21,31 @@ window.addEventListener('scroll', () => {
 
 function loadMore(url) {
   axios.get(url)
-    .then(data => {
-      if (data.status !== 200) return
-      page ++ // 每次触底page+1
-      const { moreList } = data.data
-      moreList.forEach((list) => {
-        const html = `
-          <div class="content-cards__item">
-            <a href='${list.url}' class="content-cards__item-img">
-              <figure style="background-image:url(${list.img})"></figure>
-              <div class="overlay">${list.name}</div>
-            </a>
-            <h2>${list.h2}</h2>
-          </div>
-        `
-        contentCards.innerHTML += html
-      })
+  .then(data => {
+    // 如果结束就隐藏loading图标 返回函数
+    if (data.data.finished) {
       oLoading.style.visibility = 'hidden'
-      loading = true
+      return
+    }
+
+    // 服务器不响应就返回函数
+    if (data.status !== 200) return
+
+    page ++ // 每次触底page+1
+    const { moreList } = data.data
+    moreList.forEach((list) => {
+      const html = `
+        <div class="content-cards__item">
+          <a href='${list.url}' class="content-cards__item-img">
+            <figure style="background-image:url(${list.img})"></figure>
+            <div class="overlay">${list.name}</div>
+          </a>
+          <h2>${list.h2}</h2>
+        </div>
+      `
+      contentCards.innerHTML += html
     })
+    oLoading.style.visibility = 'hidden'
+    loading = true
+  })
 }

@@ -11,5 +11,6 @@
     { "url": "about-committee-link.html", "img": "https://picsum.photos/300/300?random1", "name": "Tom ROE", "h2": "EU-ASIA Centre, Brussels" },
     { "url": "about-committee-link.html", "img": "https://picsum.photos/300/300?random1", "name": "Tom ROE", "h2": "EU-ASIA Centre, Brussels" },
     { "url": "about-committee-link.html", "img": "https://picsum.photos/300/300?random1", "name": "Tom ROE", "h2": "EU-ASIA Centre, Brussels" }
-  ]
+  ],
+  "finished": false
 }
