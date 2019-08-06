@@ -765,16 +765,20 @@ figure {
   .content__main {
     text-align: justify; }
   .content__p {
+    margin-bottom: 32px; }
+  .content p {
+    margin-bottom: 32px; }
+  .content p {
     font-size: 18px;
     font-family: PingFangSC-Regular;
     line-height: 32px;
     margin-bottom: 32px; }
-    .content__p img {
+    .content p img {
       width: 100%;
       border-radius: 4px; }
-    .content__p em {
+    .content p em {
       color: #B3D9FF; }
-    .content__p a {
+    .content p a {
       display: inline;
       color: #5EABFF; }
   .content__person {
@@ -830,7 +834,7 @@ figure {
     .content__main {
       text-align: left;
       padding: 10px; }
-    .content__p {
+    .content p {
       font-size: 16px; } }
 
 .title {

@@ -9,13 +9,18 @@ const contentCards = document.querySelector('.content-cards')
 
 oLoadMore.addEventListener('click', (ev)=>{
   ev.preventDefault()
-  loadMore(APIMore)
+  
+  loadMore(APIMore + 
+    ((/\?/).test(APIMore) ? `&page=${page}` : `?page=${page}`)
+  )
 })
 
+let page = 0
 function loadMore(url){
   axios.get(url)
   .then(data=>{
     if(data.status !== 200) return
+    page ++
     const { moreList, thelastone } = data.data
     if(thelastone == true) oLoadMore.style.display = 'none'
     moreList.forEach(list => {

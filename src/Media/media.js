@@ -15,7 +15,9 @@ window.addEventListener('scroll', () => {
   if (clientBottom > 300 && contentCards.offsetHeight > window.innerHeight / 2 && loading) {
     loading = false
     oLoading.style.visibility = 'visible'
-    loadMore(APIMore + `?page=${page}`)
+    loadMore(APIMore +
+      ((/\?/).test(APIMore) ? `&page=${page}` : `?page=${page}`)
+    )
   }
 })
 

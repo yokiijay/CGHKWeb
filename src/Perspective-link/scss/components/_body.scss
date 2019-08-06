@@ -62,7 +62,7 @@
   &__main {
     // text-align: justify;
   }
-  &__p {
+  p {
     @include font(18px, null, $text-family-pingfang-regular);
     line-height: 32px;
     margin-bottom: 32px;
@@ -256,7 +256,7 @@
       padding: 10px;
     }
 
-    &__p {
+    p {
       font-size: 16px;
     }
   }

@@ -20,16 +20,16 @@ tabs.forEach((el,i)=>{
     /*------------------ 点击第几个tab 执行某块函数 ------------------*/
     switch (i) {
       case 0:
-        getAll(APIAll + `?tab=All`)
+        getAll(APIAll + `${(/\?/).test(APIAll) ? '&' : '?'}tab=All`)
         break;
       case 1:
-        getOthers(APIOthers + `?tab=Free`)
+        getOthers(APIOthers + `${(/\?/).test(APIOthers) ? '&' : '?'}tab=Free`)
         break;
       case 2:
-        getOthers(APIOthers + `?tab=Standard`)
+        getOthers(APIOthers + `${(/\?/).test(APIOthers) ? '&' : '?'}tab=Standard`)
         break;
       case 3:
-        getOthers(APIOthers + `?tab=Preminum`)
+        getOthers(APIOthers + `${(/\?/).test(APIOthers) ? '&' : '?'}tab=Preminum`)
         break;
     
       default:
@@ -88,7 +88,7 @@ function getAll(url){
     }
   })
 }
-getAll(APIAll + `?tab=All`)
+getAll(APIAll + `${(/\?/).test(APIAll) ? '&' : '?'}tab=All`)
 function getOthers(url){
   contentCards.innerHTML = loadingHTML
   axios.get(url)
@@ -123,16 +123,16 @@ function handleScrolling(){
     loading = false
     switch(currentTab.innerHTML) {
       case 'All':
-        getMore(APIMore + `?tab=All&page=${page}`)
+        getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=All&page=${page}`)
         break
       case 'Free':
-        getMore(APIMore + `?tab=Free&page=${page}`)
+        getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Free&page=${page}`)
         break
       case 'Standard':
-        getMore(APIMore + `?tab=Standard&page=${page}`)
+        getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Standard&page=${page}`)
         break
       case 'Preminum':
-        getMore(APIMore + `?tab=Preminum&page=${page}`)
+        getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Preminum&page=${page}`)
         break
     }
   }

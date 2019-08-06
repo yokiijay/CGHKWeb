@@ -9,16 +9,24 @@ import voice from './voice'
 /*------------------ inital ------------------*/
 switch (document.querySelector('.content-tab__item--current').innerHTML) {
   case 'All':
-    loadInitial(APIAll + `?tab=All`)
+    loadInitial(APIAll +
+      ((/\?/).test(APIAll) ? `&tab=All` : `?tab=All`)
+    )
     break
-  case 'Take on top news':
-    loadInitial(APIAll + `?tab=Take on top news`)
+  case 'Take On Top News':
+    loadInitial(APIAll +
+      ((/\?/).test(APIAll) ? `&tab=Take On Top News` : `?tab=Take On Top News`)
+    )
     break
   case 'Podcast':
-    loadInitial(APIAll + `?tab=Podcast`)
+    loadInitial(APIAll +
+      ((/\?/).test(APIAll) ? `&tab=Podcast` : `?tab=Podcast`)
+    )
     break
   case 'Discussion and Debate':
-    loadInitial(APIAll + `?tab=Discussion and Debate`)
+    loadInitial(APIAll +
+      ((/\?/).test(APIAll) ? `&tab=Discussion and Debate` : `?tab=Discussion and Debate`)
+    )
     break
 }
 
@@ -38,16 +46,24 @@ tabs.forEach((el,i)=>{
     /*------------------ 点击第几个tab 执行某块函数 ------------------*/
     switch(currentTab.innerHTML) {
       case 'All':
-        loadInitial(APIAll + `?tab=All`)
+        loadInitial(APIAll +
+          ((/\?/).test(APIAll) ? `&tab=All` : `?tab=All`)
+        )
         break
-      case 'Take on top news':
-        loadInitial(APIAll + `?tab=Take on top news`)
+      case 'Take On Top News':
+        loadInitial(APIAll +
+          ((/\?/).test(APIAll) ? `&tab=Take On Top News` : `?tab=Take On Top News`)
+        )
         break
       case 'Podcast':
-        loadInitial(APIAll + `?tab=Podcast`)
+        loadInitial(APIAll +
+          ((/\?/).test(APIAll) ? `&tab=Podcast` : `?tab=Podcast`)
+        )
         break
       case 'Discussion and Debate':
-        loadInitial(APIAll + `?tab=Discussion and Debate`)
+        loadInitial(APIAll +
+          ((/\?/).test(APIAll) ? `&tab=Discussion and Debate` : `?tab=Discussion and Debate`)
+        )
         break
     }
   }
@@ -254,16 +270,16 @@ function handleScrolling() {
       col.loading = true
       switch (currentTab.innerHTML) {
         case 'All':
-          loadMore(APIMore + `?tab=All&page=${page+index}`, col)
+          loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=All&page=${page+index}`, col)
           break
-        case 'Take on top news':
-          loadMore(APIMore + `?tab=Take on top news&page=${page+index}`, col)
+        case 'Take On Top News':
+          loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Take On Top News&page=${page+index}`, col)
           break
         case 'Podcast':
-          loadMore(APIMore + `?tab=Podcast&page=${page+index}`, col)
+          loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Podcast&page=${page+index}`, col)
           break
-        case 'Discussion':
-          loadMore(APIMore + `?tab=Discussion and Debate&page=${page+index}`, col)
+        case 'Discussion and Debate':
+          loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Discussion and Debate&page=${page+index}`, col)
           break
       }
     }

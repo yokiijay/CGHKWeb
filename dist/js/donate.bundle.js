@@ -1,2 +1,246 @@
-!function(n){var e={};function t(a){if(e[a])return e[a].exports;var s=e[a]={i:a,l:!1,exports:{}};return n[a].call(s.exports,s,s.exports,t),s.l=!0,s.exports}t.m=n,t.c=e,t.d=function(n,e,a){t.o(n,e)||Object.defineProperty(n,e,{enumerable:!0,get:a})},t.r=function(n){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(n,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(n,"__esModule",{value:!0})},t.t=function(n,e){if(1&e&&(n=t(n)),8&e)return n;if(4&e&&"object"==typeof n&&n&&n.__esModule)return n;var a=Object.create(null);if(t.r(a),Object.defineProperty(a,"default",{enumerable:!0,value:n}),2&e&&"string"!=typeof n)for(var s in n)t.d(a,s,function(e){return n[e]}.bind(null,s));return a},t.n=function(n){var e=n&&n.__esModule?function(){return n.default}:function(){return n};return t.d(e,"a",e),e},t.o=function(n,e){return Object.prototype.hasOwnProperty.call(n,e)},t.p="",t(t.s=85)}({0:function(n,e,t){n.exports=t.p+"images/43caf8cea1ed6ff67f6f33078415e9d9.svg"},2:function(n,e,t){n.exports=t.p+"images/9fea14d987f943eb8863b933fd14b7d1.svg"},3:function(n,e,t){n.exports=t.p+"images/5a2b37e3ad53de87bd3eb9df3587bf0b.svg"},4:function(n,e){document.querySelectorAll(".menu-list__sublist").forEach(n=>{const e=n.parentNode,t=e.querySelector(".arrow-down");e.addEventListener("touchstart",function(){n.classList.toggle("menu-list__sublist--active"),t.classList.toggle("arrow-down--inactive")})});const t=document.querySelector("button"),a=document.querySelector(".menu-list");t.addEventListener("touchend",()=>{a.classList.toggle("menu-list--active",!0)}),document.addEventListener("touchstart",n=>{const{clientX:e,clientY:t}=n.touches[0],{width:s}=a.getBoundingClientRect();e>s&&a.classList.toggle("menu-list--active",!1)})},5:function(n,e){const t=document.querySelector(".btn-float"),a=document.querySelector(".menu-list");window.addEventListener("scroll",n=>{window.scrollY>200?(t.style.filter="blur(0)",t.style.transform="scale(1)",t.style.top="30px"):(t.style.filter="blur(20px)",t.style.transform="scale(0)",t.style.top="60px")}),t.addEventListener("touchstart",()=>{a.classList.toggle("menu-list--active",!0)})},6:function(n,e,t){n.exports=t.p+"images/cdbd071073466ad55a79c381fccfa0db.svg"},85:function(n,e,t){"use strict";t.r(e);t(86),t(87),t(4),t(5)},86:function(n,e,t){n.exports='<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <meta http-equiv="X-UA-Compatible" content="ie=edge">\n  <link rel="icon" type="image/png" href="https://i.postimg.cc/ryf98PTw/favicon.png">\n  <title>CGHK - Donate</title>\n</head>\n<body>\n  \x3c!-- Nav --\x3e\n  <header class="header">\n    <div class="nav">\n      <div class="nav__wrapper">\n        <a href="index.html" class="nav__logo"></a>\n        <div class="nav-links">\n          <nav class="nav-links-one">\n            <a href="private-policy.html" class="nav-links-one__item">Private Policy</a>\n            <a href="contact.html" class="nav-links-one__item">Contact Us</a>\n            <a href="media.html" class="nav-links-one__item">Media</a>\n            <a href="donate.html" class="nav-links-one__item">Donate</a>\n            <div class="language">\n              <img class="language__selected" src="'+t(0)+'" alt="">\n              <ul href="" class="language__item">\n                <li class="language__en"><a href=""><img title="English" width="13px" src="'+t(0)+'"\n                alt=""></a></li>\n          <li class="language__zh"><a href=""><img title="中文" width="13px" src="'+t(2)+'" alt=""></a>\n          </li>\n              </ul>\n            </div>\n          </nav>\n          <nav class="nav-links-two">\n            <div class="nav-links-two__item">\n              <a href="about-CGHK.html">About CGHK<i class="icon arrow-down"></i></a>\n              <ul class="nav-links-two__subnav">\n                <li><a href="about.html">About</a></li>\n                <li><a href="about-CGHK.html">Message of President</a></li>\n                <li><a href="about-committee.html">Advisory Committee</a></li>\n                <li><a href="about-experts.html">Commentators & Experts</a></li>\n                <li><a href="about-parners.html">Partners</a></li>\n                <li><a href="about-interships.html">Staff and Interships</a></li>\n                <li><a href="contact.html">Contact Us</a></li>\n              </ul>\n            </div>\n            <div class="nav-links-two__item">\n              <a href="perspective.html?tab=Take on top news">CGHK\'s Perspective<i class="icon arrow-down"></i></a>\n              <ul class="nav-links-two__subnav">\n                <li><a href="perspective.html?tab=Take on top news">Take on top news</a></li>\n                <li><a href="perspective.html?tab=Podcast">Podcast</a></li>\n                <li><a href="perspective.html?tab=Discussion and Debate">Discussion and Debate</a></li>\n              </ul>\n            </div>\n            <div class="nav-links-two__item">\n              <a href="events.html">Events<i class="icon arrow-down"></i></a>\n              <ul class="nav-links-two__subnav">\n                <li><a href="events-list.html?list=coming">Upcoming Events</a></li>\n                <li><a href="events-list.html?list=past">Past Events</a></li>\n              </ul>\n            </div>\n            <div class="nav-links-two__item">\n              <a href="service.html">Service<i class="icon arrow-down"></i></a>\n              <ul class="nav-links-two__subnav">\n                <li><a href="service.html">E-Newsletter</a></li>\n                <li><a href="service-research.html">Policy and Market Research</a></li>\n              </ul>\n            </div>\n            <div class="nav-links-two__item">\n              <a href="publication.html">Publication</a>\n              \x3c!-- <ul class="nav-links-two__subnav">\n                <li><a href="service.html">E-Newsletter</a></li>\n                <li><a href="service.html">Policy and Market Research</a></li>\n              </ul> --\x3e\n            </div>\n            <div class="nav-links-two__item">\n              <a href="membership.html">Membership</a>\n              \x3c!-- <ul class="nav-links-two__subnav">\n                <li><a href="">E-Newsletter</a></li>\n                <li><a href="">Policy and Market Research</a></li>\n              </ul> --\x3e\n            </div>\n          </nav>\n        </div>\n      </div>\n    </div>\n    \x3c!-- 手机版nav --\x3e\n    <div class="nav-mob">\n      <a href="index.html" class="nav-mob__logo"><img src="'+t(3)+'" alt=""></a>\n      <div class="language">\n        <img class="language__selected" src="'+t(0)+'" alt="">\n        <ul href="" class="language__item">\n          <li class="language__en"><a href=""><img title="English" width="13px" src="'+t(0)+'" alt=""></a></li>\n          <li class="language__zh"><a href=""><img title="中文" width="13px" src="'+t(2)+'" alt=""></a></li>\n        </ul>\n      </div>\n      <div class="menu">\n        <button class="btn-stroke"><i class="icon hamb"></i> Menu</button>\n        <ul class="menu-list">\n          <li class="menu-list__item">\n            <div class="flex-between">About CGHK <i class="icon arrow-down arrow-down--inactive"></i></div>\n            <ul class="menu-list__sublist">\n              <li><a href="about.html">About</a></li>\n              <li><a href="about-CGHK.html">Message of President</a></li>\n              <li><a href="about-committee.html">Advisory Committee</a></li>\n              <li><a href="about-experts.html">Commentators & Experts</a></li>\n              <li><a href="about-parners.html">Partners</a></li>\n              <li><a href="about-interships.html">Staff and Interships</a></li>\n              <li><a href="contact.html">Contact Us</a></li>\n            </ul>\n          </li>\n          <li class="menu-list__item">\n            <div class="flex-between">CGHK\'s Perspective <i class="icon arrow-down arrow-down--inactive"></i></div>\n            <ul class="menu-list__sublist">\n              <li><a href="perspective.html?tab=Take on top news">Take on top news</a></li>\n              <li><a href="perspective.html?tab=Podcast">Podcast</a></li>\n              <li><a href="perspective.html?tab=Discussion and Debate">Discussion and Debate</a></li>\n            </ul>\n          </li>\n          <li class="menu-list__item">\n            <div class="flex-between">Events <i class="icon arrow-down arrow-down--inactive"></i></div>\n            <ul class="menu-list__sublist">\n              <li><a href="events-list.html?list=coming">Upcoming Events</a></li>\n                <li><a href="events-list.html?list=past">Past Events</a></li>\n            </ul>\n          </li>\n          <li class="menu-list__item">\n            <div class="flex-between">Service <i class="icon arrow-down arrow-down--inactive"></i></div>\n            <ul class="menu-list__sublist">\n              <li><a href="service.html">E-Newsletter</a></li>\n              <li><a href="service-research.html">Policy and Market Research</a></li>\n            </ul>\n          </li>\n          <li class="menu-list__item"><a href="publication.html">Publication</a></li>\n          <li class="menu-list__item"><a href="membership.html">Membership</a></li>\n          <hr class="divider">\n          <li class="menu-list__item"><a href="private-policy.html">Private Policy</a></li>\n          <li class="menu-list__item"><a href="contact.html">Contact Us</a></li>\n          <li class="menu-list__item"><a href="media.html">Media</a></li>\n          <li class="menu-list__item"><a href="donate.html">Donate</a></li>\n        </ul>\n        \x3c!-- Btn-Float --\x3e\n        <button class="btn-float"><i class="icon hamb"></i></button>\n      </div>\n    </div>\n  </header>\n  \x3c!-- Body --\x3e\n  <article class="body">\n    \x3c!-- Aside --\x3e\n    <aside class="aside">\n      <nav class="aside-bread">\n        <a href="index.html" class="aside-bread__link">Home</a>\n        <a href="" class="aside-bread__link">Donate</a>\n      </nav>\n      \x3c!-- <nav class="aside-nav">\n        <a href="" class="aside-nav__link aside-nav__link">Message of President</a>\n        <a href="" class="aside-nav__link aside-nav__link--current">About</a>\n        <a href="" class="aside-nav__link aside-nav__link">Advisory Committee</a>\n        <a href="" class="aside-nav__link aside-nav__link">Commentators & Experts</a>\n        <a href="" class="aside-nav__link aside-nav__link">Staff</a>\n        <a href="" class="aside-nav__link aside-nav__link">Contact Us</a>\n      </nav> --\x3e\n    </aside>\n    \x3c!-- Content --\x3e\n    <div class="content">\n      \x3c!-- Title --\x3e\n      <h1 class="title content__title"><img src="'+t(6)+'" alt="">Support CGHK</h1>\n      <div class="content__main">\n        <h2 class="content__subtitle">Why CGHK</h2>\n        <p class="content__p">\n          The Center for Globalization Hong Kong (CGHK) is a nonprofit, nonpartisan organization located in Hong Kong.\n          CGHK provides strategic insights and solutions to decisionmakers, and relies upon your support to help our\n          world navigate toward a more secure and prosperous future.\n        </p>\n        \x3c!-- <p class="content__p">\n          <img src="https://picsum.photos/1100/700?random=1" alt="">\n        </p> --\x3e\n        <p class="content__p">\n          Ideas matter. Stability and prosperity are not natural conditions, but the results of sound policies and more\n          effective government institutions.\n        </p>\n        <p class="content__p">\n          Our mission at CGHK is to promote and generate those superior ideas so that decisionmakers will create better\n          policy and smarter government institutions.\n        </p>\n        <p class="content__p">\n          CGHK has large network of affiliated scholars, and world-class Board of Trustees share a common purpose to\n          build a better, safer, more prosperous world.\n        </p>\n        <p class="content__p">\n          Donors invest in The Center for Globalization Hong Kong with both general support and project-specific gifts\n          that help us react nimbly to breaking events and confront urgent challenges, from the global economies to\n          global politics to the health of global areas.\n        </p>\n        <p class="content__p">\n          Our work would not be possible without the support we receive from individuals, private foundations,\n          corporations, and government agencies. We invite you to support CGHK as we help our world navigate toward a\n          more peaceful and brighter future.\n        </p>\n        <h2 class="content__subtitle">Donate</h2>\n        <p class="content__p">\n          CGHK is a nonprofit, organization and relies on charitable donations from people like you to fulfill our\n          vision. Your gift to CGHK is tax-deductible and will allow us to provide strategic insights on global issues\n          to the Hong Kong community and beyond.\n        </p>\n        <div class="content__card">\n          <h3 class="">Billing Address</h3>\n          <p class="content__p content__p--card">\n            Country : <br> <code class="content__code">United States</code><br>\n            Address 1 : <br> <code class="content__code">1028 Garfield Ave, Jersey City, NJ 07304</code><br>\n            Address 2 : <br> <code class="content__code">110 S 4th St, Minneapolis, MN 55401</code><br>\n          </p>\n        </div>\n        <div class="content__card">\n          <h3 class="">Payment Information</h3>\n          <p class="content__p">\n            Card type: <br> <code class="content__code">Credit Card</code><br>\n            Card number : <br> <code class="content__code">1234-5678-1234-5678</code><br>\n            Expiration: <br> <code class="content__code">12/20</code><br>\n            Security code: <br> <code class="content__code">789</code><br>\n          </p>\n        </div>\n\n      </div>\n    </div>\n  </article>\n  \x3c!-- Footer --\x3e\n  <footer class="footer">\n    Copyrights © 2019 CGHK All Rights Reserved.\n  </footer>\n</body>\n</html>'},87:function(n,e,t){}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/Donate/donate.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/Common/components/btnFloat.js":
+/*!*******************************************!*\
+  !*** ./src/Common/components/btnFloat.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+const btnFLoat = document.querySelector('.btn-float')
+const menuList = document.querySelector('.menu-list')
+
+window.addEventListener('scroll', (ev)=>{
+  if(window.scrollY>200) {
+    btnFLoat.style.filter = 'blur(0)'
+    btnFLoat.style.transform = 'scale(1)'
+    btnFLoat.style.top = '30px'
+  }else {
+    btnFLoat.style.filter = 'blur(20px)'
+    btnFLoat.style.transform = 'scale(0)'
+    btnFLoat.style.top = '60px'
+  }
+})
+
+btnFLoat.addEventListener('touchstart', () => {
+  menuList.classList.toggle('menu-list--active', true)
+})
+
+/***/ }),
+
+/***/ "./src/Common/components/nav.js":
+/*!**************************************!*\
+  !*** ./src/Common/components/nav.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* 展开侧边sublist */
+const aSublist = document.querySelectorAll('.menu-list__sublist')
+
+aSublist.forEach((sublist)=>{
+  const parentNode = sublist.parentNode
+  const arrow = parentNode.querySelector('.arrow-down')
+  parentNode.addEventListener('touchstart', function (){
+    sublist.classList.toggle('menu-list__sublist--active')
+    arrow.classList.toggle('arrow-down--inactive')
+  })
+})
+
+/* 点击出发menu-mob */
+const menuBtn = document.querySelector('button')
+const menuList = document.querySelector('.menu-list')
+
+menuBtn.addEventListener('touchend', ()=>{
+  menuList.classList.toggle('menu-list--active', true)
+})
+document.addEventListener('touchstart', (ev)=>{
+  const { clientX, clientY } = ev.touches[0]
+  const { width } = menuList.getBoundingClientRect()
+  if(clientX>width){
+    menuList.classList.toggle('menu-list--active', false)
+  }
+})
+
+
+
+/***/ }),
+
+/***/ "./src/Donate/donate.js":
+/*!******************************!*\
+  !*** ./src/Donate/donate.js ***!
+  \******************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _donate_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../donate.html */ "./src/donate.html");
+/* harmony import */ var _donate_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_donate_html__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scss/main.scss */ "./src/Donate/scss/main.scss");
+/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_main_scss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Common_components_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Common/components/nav */ "./src/Common/components/nav.js");
+/* harmony import */ var _Common_components_nav__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Common_components_nav__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Common_components_btnFloat__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Common/components/btnFloat */ "./src/Common/components/btnFloat.js");
+/* harmony import */ var _Common_components_btnFloat__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Common_components_btnFloat__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+/***/ }),
+
+/***/ "./src/Donate/scss/main.scss":
+/*!***********************************!*\
+  !*** ./src/Donate/scss/main.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./src/donate.html":
+/*!*************************!*\
+  !*** ./src/donate.html ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <link rel=\"icon\" type=\"image/png\" href=\"https://i.postimg.cc/ryf98PTw/favicon.png\">\n  <title>CGHK - Donate</title>\n</head>\n<body>\n  <!-- Nav -->\n  <header class=\"header\">\n    <div class=\"nav\">\n      <div class=\"nav__wrapper\">\n        <a href=\"index.html\" class=\"nav__logo\"></a>\n        <div class=\"nav-links\">\n          <nav class=\"nav-links-one\">\n            <a href=\"private-policy.html\" class=\"nav-links-one__item\">Private Policy</a>\n            <a href=\"contact.html\" class=\"nav-links-one__item\">Contact Us</a>\n            <a href=\"media.html\" class=\"nav-links-one__item\">Media</a>\n            <a href=\"donate.html\" class=\"nav-links-one__item\">Donate</a>\n            <div class=\"language\">\n              <img class=\"language__selected\" src=\"" + __webpack_require__(/*! ./images/language-en.svg */ "./src/images/language-en.svg") + "\" alt=\"\">\n              <ul href=\"\" class=\"language__item\">\n                <li class=\"language__en\"><a href=\"\"><img title=\"English\" width=\"13px\" src=\"" + __webpack_require__(/*! ./images/language-en.svg */ "./src/images/language-en.svg") + "\"\n                alt=\"\"></a></li>\n          <li class=\"language__zh\"><a href=\"\"><img title=\"中文\" width=\"13px\" src=\"" + __webpack_require__(/*! ./images/language-zh.svg */ "./src/images/language-zh.svg") + "\" alt=\"\"></a>\n          </li>\n              </ul>\n            </div>\n          </nav>\n          <nav class=\"nav-links-two\">\n            <div class=\"nav-links-two__item\">\n              <a href=\"about-CGHK.html\">About CGHK<i class=\"icon arrow-down\"></i></a>\n              <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"about.html\">About</a></li>\n                <li><a href=\"about-CGHK.html\">Message of President</a></li>\n                <li><a href=\"about-committee.html\">Advisory Committee</a></li>\n                <li><a href=\"about-experts.html\">Commentators & Experts</a></li>\n                <li><a href=\"about-parners.html\">Partners</a></li>\n                <li><a href=\"about-interships.html\">Staff and Interships</a></li>\n                <li><a href=\"contact.html\">Contact Us</a></li>\n              </ul>\n            </div>\n            <div class=\"nav-links-two__item\">\n              <a href=\"perspective.html?tab=Take on top news\">CGHK's Perspective<i class=\"icon arrow-down\"></i></a>\n              <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"perspective.html?tab=Take on top news\">Take on top news</a></li>\n                <li><a href=\"perspective.html?tab=Podcast\">Podcast</a></li>\n                <li><a href=\"perspective.html?tab=Discussion and Debate\">Discussion and Debate</a></li>\n              </ul>\n            </div>\n            <div class=\"nav-links-two__item\">\n              <a href=\"events.html\">Events<i class=\"icon arrow-down\"></i></a>\n              <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"events-list.html?list=coming\">Upcoming Events</a></li>\n                <li><a href=\"events-list.html?list=past\">Past Events</a></li>\n              </ul>\n            </div>\n            <div class=\"nav-links-two__item\">\n              <a href=\"service.html\">Service<i class=\"icon arrow-down\"></i></a>\n              <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"service.html\">E-Newsletter</a></li>\n                <li><a href=\"service-research.html\">Policy and Market Research</a></li>\n              </ul>\n            </div>\n            <div class=\"nav-links-two__item\">\n              <a href=\"publication.html\">Publication</a>\n              <!-- <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"service.html\">E-Newsletter</a></li>\n                <li><a href=\"service.html\">Policy and Market Research</a></li>\n              </ul> -->\n            </div>\n            <div class=\"nav-links-two__item\">\n              <a href=\"membership.html\">Membership</a>\n              <!-- <ul class=\"nav-links-two__subnav\">\n                <li><a href=\"\">E-Newsletter</a></li>\n                <li><a href=\"\">Policy and Market Research</a></li>\n              </ul> -->\n            </div>\n          </nav>\n        </div>\n      </div>\n    </div>\n    <!-- 手机版nav -->\n    <div class=\"nav-mob\">\n      <a href=\"index.html\" class=\"nav-mob__logo\"><img src=\"" + __webpack_require__(/*! ./images/logo.svg */ "./src/images/logo.svg") + "\" alt=\"\"></a>\n      <div class=\"language\">\n        <img class=\"language__selected\" src=\"" + __webpack_require__(/*! ./images/language-en.svg */ "./src/images/language-en.svg") + "\" alt=\"\">\n        <ul href=\"\" class=\"language__item\">\n          <li class=\"language__en\"><a href=\"\"><img title=\"English\" width=\"13px\" src=\"" + __webpack_require__(/*! ./images/language-en.svg */ "./src/images/language-en.svg") + "\" alt=\"\"></a></li>\n          <li class=\"language__zh\"><a href=\"\"><img title=\"中文\" width=\"13px\" src=\"" + __webpack_require__(/*! ./images/language-zh.svg */ "./src/images/language-zh.svg") + "\" alt=\"\"></a></li>\n        </ul>\n      </div>\n      <div class=\"menu\">\n        <button class=\"btn-stroke\"><i class=\"icon hamb\"></i> Menu</button>\n        <ul class=\"menu-list\">\n          <li class=\"menu-list__item\">\n            <div class=\"flex-between\">About CGHK <i class=\"icon arrow-down arrow-down--inactive\"></i></div>\n            <ul class=\"menu-list__sublist\">\n              <li><a href=\"about.html\">About</a></li>\n              <li><a href=\"about-CGHK.html\">Message of President</a></li>\n              <li><a href=\"about-committee.html\">Advisory Committee</a></li>\n              <li><a href=\"about-experts.html\">Commentators & Experts</a></li>\n              <li><a href=\"about-parners.html\">Partners</a></li>\n              <li><a href=\"about-interships.html\">Staff and Interships</a></li>\n              <li><a href=\"contact.html\">Contact Us</a></li>\n            </ul>\n          </li>\n          <li class=\"menu-list__item\">\n            <div class=\"flex-between\">CGHK's Perspective <i class=\"icon arrow-down arrow-down--inactive\"></i></div>\n            <ul class=\"menu-list__sublist\">\n              <li><a href=\"perspective.html?tab=Take on top news\">Take on top news</a></li>\n              <li><a href=\"perspective.html?tab=Podcast\">Podcast</a></li>\n              <li><a href=\"perspective.html?tab=Discussion and Debate\">Discussion and Debate</a></li>\n            </ul>\n          </li>\n          <li class=\"menu-list__item\">\n            <div class=\"flex-between\">Events <i class=\"icon arrow-down arrow-down--inactive\"></i></div>\n            <ul class=\"menu-list__sublist\">\n              <li><a href=\"events-list.html?list=coming\">Upcoming Events</a></li>\n                <li><a href=\"events-list.html?list=past\">Past Events</a></li>\n            </ul>\n          </li>\n          <li class=\"menu-list__item\">\n            <div class=\"flex-between\">Service <i class=\"icon arrow-down arrow-down--inactive\"></i></div>\n            <ul class=\"menu-list__sublist\">\n              <li><a href=\"service.html\">E-Newsletter</a></li>\n              <li><a href=\"service-research.html\">Policy and Market Research</a></li>\n            </ul>\n          </li>\n          <li class=\"menu-list__item\"><a href=\"publication.html\">Publication</a></li>\n          <li class=\"menu-list__item\"><a href=\"membership.html\">Membership</a></li>\n          <hr class=\"divider\">\n          <li class=\"menu-list__item\"><a href=\"private-policy.html\">Private Policy</a></li>\n          <li class=\"menu-list__item\"><a href=\"contact.html\">Contact Us</a></li>\n          <li class=\"menu-list__item\"><a href=\"media.html\">Media</a></li>\n          <li class=\"menu-list__item\"><a href=\"donate.html\">Donate</a></li>\n        </ul>\n        <!-- Btn-Float -->\n        <button class=\"btn-float\"><i class=\"icon hamb\"></i></button>\n      </div>\n    </div>\n  </header>\n  <!-- Body -->\n  <article class=\"body\">\n    <!-- Aside -->\n    <aside class=\"aside\">\n      <nav class=\"aside-bread\">\n        <a href=\"index.html\" class=\"aside-bread__link\">Home</a>\n        <a href=\"\" class=\"aside-bread__link\">Donate</a>\n      </nav>\n      <!-- <nav class=\"aside-nav\">\n        <a href=\"\" class=\"aside-nav__link aside-nav__link\">Message of President</a>\n        <a href=\"\" class=\"aside-nav__link aside-nav__link--current\">About</a>\n        <a href=\"\" class=\"aside-nav__link aside-nav__link\">Advisory Committee</a>\n        <a href=\"\" class=\"aside-nav__link aside-nav__link\">Commentators & Experts</a>\n        <a href=\"\" class=\"aside-nav__link aside-nav__link\">Staff</a>\n        <a href=\"\" class=\"aside-nav__link aside-nav__link\">Contact Us</a>\n      </nav> -->\n    </aside>\n    <!-- Content -->\n    <div class=\"content\">\n      <!-- Title -->\n      <h1 class=\"title content__title\"><img src=\"" + __webpack_require__(/*! ./images/dots-2.svg */ "./src/images/dots-2.svg") + "\" alt=\"\">Support CGHK</h1>\n      <div class=\"content__main\">\n        <h2 class=\"content__subtitle\">Why CGHK</h2>\n        <p class=\"content__p\">\n          The Center for Globalization Hong Kong (CGHK) is a nonprofit, nonpartisan organization located in Hong Kong.\n          CGHK provides strategic insights and solutions to decisionmakers, and relies upon your support to help our\n          world navigate toward a more secure and prosperous future.\n        </p>\n        <!-- <p class=\"content__p\">\n          <img src=\"https://picsum.photos/1100/700?random=1\" alt=\"\">\n        </p> -->\n        <p class=\"content__p\">\n          Ideas matter. Stability and prosperity are not natural conditions, but the results of sound policies and more\n          effective government institutions.\n        </p>\n        <p class=\"content__p\">\n          Our mission at CGHK is to promote and generate those superior ideas so that decisionmakers will create better\n          policy and smarter government institutions.\n        </p>\n        <p class=\"content__p\">\n          CGHK has large network of affiliated scholars, and world-class Board of Trustees share a common purpose to\n          build a better, safer, more prosperous world.\n        </p>\n        <p class=\"content__p\">\n          Donors invest in The Center for Globalization Hong Kong with both general support and project-specific gifts\n          that help us react nimbly to breaking events and confront urgent challenges, from the global economies to\n          global politics to the health of global areas.\n        </p>\n        <p class=\"content__p\">\n          Our work would not be possible without the support we receive from individuals, private foundations,\n          corporations, and government agencies. We invite you to support CGHK as we help our world navigate toward a\n          more peaceful and brighter future.\n        </p>\n        <h2 class=\"content__subtitle\">Donate</h2>\n        <p class=\"content__p\">\n          CGHK is a nonprofit, organization and relies on charitable donations from people like you to fulfill our\n          vision. Your gift to CGHK is tax-deductible and will allow us to provide strategic insights on global issues\n          to the Hong Kong community and beyond.\n        </p>\n        <div class=\"content__card\">\n          <h3 class=\"\">Billing Address</h3>\n          <p class=\"content__p content__p--card\">\n            Country : <br> <code class=\"content__code\">United States</code><br>\n            Address 1 : <br> <code class=\"content__code\">1028 Garfield Ave, Jersey City, NJ 07304</code><br>\n            Address 2 : <br> <code class=\"content__code\">110 S 4th St, Minneapolis, MN 55401</code><br>\n          </p>\n        </div>\n        <div class=\"content__card\">\n          <h3 class=\"\">Payment Information</h3>\n          <p class=\"content__p\">\n            Card type: <br> <code class=\"content__code\">Credit Card</code><br>\n            Card number : <br> <code class=\"content__code\">1234-5678-1234-5678</code><br>\n            Expiration: <br> <code class=\"content__code\">12/20</code><br>\n            Security code: <br> <code class=\"content__code\">789</code><br>\n          </p>\n        </div>\n\n      </div>\n    </div>\n  </article>\n  <!-- Footer -->\n  <footer class=\"footer\">\n    Copyrights © 2019 CGHK All Rights Reserved.\n  </footer>\n</body>\n</html>";
+
+/***/ }),
+
+/***/ "./src/images/dots-2.svg":
+/*!*******************************!*\
+  !*** ./src/images/dots-2.svg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/cdbd071073466ad55a79c381fccfa0db.svg";
+
+/***/ }),
+
+/***/ "./src/images/language-en.svg":
+/*!************************************!*\
+  !*** ./src/images/language-en.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/43caf8cea1ed6ff67f6f33078415e9d9.svg";
+
+/***/ }),
+
+/***/ "./src/images/language-zh.svg":
+/*!************************************!*\
+  !*** ./src/images/language-zh.svg ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/9fea14d987f943eb8863b933fd14b7d1.svg";
+
+/***/ }),
+
+/***/ "./src/images/logo.svg":
+/*!*****************************!*\
+  !*** ./src/images/logo.svg ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "images/5a2b37e3ad53de87bd3eb9df3587bf0b.svg";
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=donate.bundle.js.map

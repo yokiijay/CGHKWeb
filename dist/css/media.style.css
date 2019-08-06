@@ -991,7 +991,7 @@ figure {
         box-shadow: 0 30px 20px rgba(0, 0, 0, 0.3); }
     .content__headline::before {
       display: none; }
-    .content__p {
+    .content p {
       font-size: 16px; }
   .content-cards {
     grid-template-columns: repeat(12, 1fr);

@@ -1144,7 +1144,7 @@ figure {
     .content__main {
       text-align: left;
       padding: 10px; }
-    .content__p {
+    .content p {
       font-size: 16px; }
   .content-cards {
     grid-template-columns: repeat(2, 1fr);
