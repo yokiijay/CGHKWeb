@@ -24,3 +24,19 @@
 body {
   background: $bg-color-primary;
 }
+
+.nav__wrapper {
+  position: relative;
+}
+.nav__message {
+  position: absolute;
+  right: 0;
+  top: 150px;
+}
+.nav__pagination {
+  position: absolute;
+  top: 670px;
+}
+.message-mob {
+  margin-top: 300px;
+}

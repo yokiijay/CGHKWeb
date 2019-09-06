@@ -3,7 +3,8 @@ $nav-color: $text-color-default;
 
 /*------------------ Nav ------------------*/
 /* nav */
-.nav { 
+.nav {
+  position: relative;
   background: $nav-background;
   &__wrapper {
     margin: 0 auto;
