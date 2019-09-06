@@ -832,11 +832,11 @@ figure {
   .voice__slider-progress {
     position: absolute;
     width: 40%;
+    max-width: 100%;
     height: 100%;
     border-radius: 6px;
     background: #5EABFF;
-    -webkit-transition: 1s linear;
-    transition: 1s linear; }
+    cursor: pointer; }
   .voice__slider-progress-oval {
     content: '';
     display: block;
@@ -956,7 +956,8 @@ figure {
     .voice p {
       font-size: 14px;
       color: #ADB8CC;
-      font-family: PingFangSC-Medium; } }
+      font-family: PingFangSC-Medium;
+      margin-bottom: 0; } }
 
 .title {
   display: -webkit-box;

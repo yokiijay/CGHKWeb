@@ -134,10 +134,11 @@
   &__slider-progress {
     position: absolute;
     width: 40%;
+    max-width: 100%;
     height: 100%;
     border-radius: 6px;
     background: $color-primary;
-    transition: 1s linear;
+    cursor: pointer;
   }
 
   &__slider-progress-oval {
@@ -285,6 +286,7 @@
 
     p {
       @include font(14px, $text-color-greyblue, $text-family-pingfang-medium);
+      margin-bottom: 0;
     }
   }
 }

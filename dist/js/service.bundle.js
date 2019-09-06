@@ -2148,6 +2148,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*------------------ Initial ------------------*/
+// tab索引
+document.querySelectorAll('.content-tab__item').forEach((el,i)=>{
+  el.index = i
+})
+
 /*------------------ tabs click ------------------*/
 const tabs = document.querySelectorAll('.content-tab__item')
 const contentCards = document.querySelector('.content-cards')
@@ -2182,12 +2188,6 @@ tabs.forEach((el,i)=>{
     return false
   }
 })
-
-// 接口 已经修改 并写到了html的script里
-// const APIAll = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getAll'
-// const APIFree = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getFree'
-// const APIStandard = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getStandard'
-// const APIPreminum = 'https://easy-mock.com/mock/5d276cc97c78013d841db5af/data/getPreminum'
 
 const loadingHTML = `
     <div class="loading">
@@ -2265,17 +2265,17 @@ function handleScrolling(){
   if(clientBottom>300 && contentCards.offsetHeight>window.innerHeight/2 && loading){
     // 执行当前tab对应的触底加载函数
     loading = false
-    switch(currentTab.innerHTML) {
-      case 'All':
+    switch(currentTab.index) {
+      case 0:
         getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=All&page=${page}`)
         break
-      case 'Free':
+      case 1:
         getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Free&page=${page}`)
         break
-      case 'Standard':
+      case 2:
         getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Standard&page=${page}`)
         break
-      case 'Preminum':
+      case 3:
         getMore(APIMore + `${(/\?/).test(APIMore) ? '&' : '?'}tab=Preminum&page=${page}`)
         break
     }

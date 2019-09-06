@@ -6,8 +6,60 @@ export default function refreshVoices(){
     // 获取元素
     const audioEl = el.querySelector('audio')
     const audioBtn = el.querySelector('i.icon-voice')
+    const audioSlider = el.querySelector('.voice__slider')
+    const audioProgress = el.querySelector('.voice__slider-progress')
     const audioOval = el.querySelector('.voice__slider-progress-oval')
     const audioIcon = el.querySelector('.icon-voice')
+
+    // 滑动slider
+    if (window.innerWidth < 992){
+      audioSlider.ontouchstart = ev => {
+        let originalClientX = ev.changedTouches[0].clientX
+        let originalWidth = audioProgress.offsetWidth
+
+        window.ontouchmove = ev => {
+          let currentClientX = ev.changedTouches[0].clientX
+          let disClientX = currentClientX - originalClientX
+
+          audioProgress.style.width = disClientX + originalWidth + 'px'
+          if (audioEl.readyState >= 2) {
+            const duration = audioEl.duration
+            audioEl.currentTime = modulate(audioProgress.offsetWidth,
+              [0, audioSlider.offsetWidth],
+              [0, duration]
+            )
+          }
+        }
+
+        window.ontouchend = () => {
+          window.onmousemove = null
+        }
+      }
+    }else {
+      audioSlider.onmousedown = ev=>{
+        let originalClientX = ev.clientX
+        let originalWidth = audioProgress.offsetWidth
+  
+        window.onmousemove = ev=>{
+          ev.preventDefault()
+          let currentClientX = ev.clientX
+          let disClientX = currentClientX - originalClientX
+  
+          audioProgress.style.width = disClientX + originalWidth + 'px'
+          if(audioEl.readyState >= 2){
+            const duration = audioEl.duration
+            audioEl.currentTime = modulate(audioProgress.offsetWidth,
+              [0,audioSlider.offsetWidth],
+              [0,duration]
+              )
+          }
+        }
+  
+        window.onmouseup = ()=>{
+          window.onmousemove = null
+        }
+      }
+    }
   
     // 点击喇叭播放/暂停
     audioBtn.addEventListener('click',()=>{

@@ -228,9 +228,11 @@
     position: absolute;
     width: 40%;
     height: 100%;
+    max-width: 100%;
     border-radius: 6px;
     background: $color-primary;
-    transition: 1s linear;
+    // transition: 1s linear;
+    cursor: pointer;
   }
   &__slider-progress-oval {
     content: '';
@@ -243,6 +245,7 @@
     top: -2px;
     border-radius: 50%;
     transition: 1s linear;
+    cursor: pointer;
 
     &::after {
       content: '';

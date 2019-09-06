@@ -2141,23 +2141,28 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /*------------------ inital ------------------*/
-switch (document.querySelector('.content-tab__item--current').innerHTML) {
+// 给tab索引值
+document.querySelectorAll('.content-tab__item').forEach((el,i)=>{
+  el.index = i
+})
+
+switch (document.querySelector('.content-tab__item--current').index) {
   case 'All':
     loadInitial(APIAll +
       ((/\?/).test(APIAll) ? `&tab=All` : `?tab=All`)
     )
     break
-  case 'Take On Top News':
+  case 0:
     loadInitial(APIAll +
       ((/\?/).test(APIAll) ? `&tab=Take On Top News` : `?tab=Take On Top News`)
     )
     break
-  case 'Podcast':
+  case 1:
     loadInitial(APIAll +
       ((/\?/).test(APIAll) ? `&tab=Podcast` : `?tab=Podcast`)
     )
     break
-  case 'Discussion and Debate':
+  case 2:
     loadInitial(APIAll +
       ((/\?/).test(APIAll) ? `&tab=Discussion and Debate` : `?tab=Discussion and Debate`)
     )
@@ -2178,23 +2183,23 @@ tabs.forEach((el,i)=>{
     page = 0 // 重置页数
 
     /*------------------ 点击第几个tab 执行某块函数 ------------------*/
-    switch(currentTab.innerHTML) {
+    switch(currentTab.index) {
       case 'All':
         loadInitial(APIAll +
           ((/\?/).test(APIAll) ? `&tab=All` : `?tab=All`)
         )
         break
-      case 'Take On Top News':
+      case 0:
         loadInitial(APIAll +
           ((/\?/).test(APIAll) ? `&tab=Take On Top News` : `?tab=Take On Top News`)
         )
         break
-      case 'Podcast':
+      case 1:
         loadInitial(APIAll +
           ((/\?/).test(APIAll) ? `&tab=Podcast` : `?tab=Podcast`)
         )
         break
-      case 'Discussion and Debate':
+      case 2:
         loadInitial(APIAll +
           ((/\?/).test(APIAll) ? `&tab=Discussion and Debate` : `?tab=Discussion and Debate`)
         )
@@ -2402,17 +2407,17 @@ function handleScrolling() {
     if (clientBottom > 300 && col.offsetHeight > window.innerHeight / 2 && !col.loading) {
       // 执行当前tab对应的触底加载函数
       col.loading = true
-      switch (currentTab.innerHTML) {
+      switch (currentTab.index) {
         case 'All':
           loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=All&page=${page+index}`, col)
           break
-        case 'Take On Top News':
+        case 0:
           loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Take On Top News&page=${page+index}`, col)
           break
-        case 'Podcast':
+        case 1:
           loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Podcast&page=${page+index}`, col)
           break
-        case 'Discussion and Debate':
+        case 2:
           loadMore(APIMore + `${(/\?/).test(APIMore)?'&':'?'}tab=Discussion and Debate&page=${page+index}`, col)
           break
       }
@@ -2524,8 +2529,60 @@ function refreshVoices(){
     // 获取元素
     const audioEl = el.querySelector('audio')
     const audioBtn = el.querySelector('i.icon-voice')
+    const audioSlider = el.querySelector('.voice__slider')
+    const audioProgress = el.querySelector('.voice__slider-progress')
     const audioOval = el.querySelector('.voice__slider-progress-oval')
     const audioIcon = el.querySelector('.icon-voice')
+
+    // 滑动slider
+    if (window.innerWidth < 992){
+      audioSlider.ontouchstart = ev => {
+        let originalClientX = ev.changedTouches[0].clientX
+        let originalWidth = audioProgress.offsetWidth
+
+        window.ontouchmove = ev => {
+          let currentClientX = ev.changedTouches[0].clientX
+          let disClientX = currentClientX - originalClientX
+
+          audioProgress.style.width = disClientX + originalWidth + 'px'
+          if (audioEl.readyState >= 2) {
+            const duration = audioEl.duration
+            audioEl.currentTime = modulate(audioProgress.offsetWidth,
+              [0, audioSlider.offsetWidth],
+              [0, duration]
+            )
+          }
+        }
+
+        window.ontouchend = () => {
+          window.onmousemove = null
+        }
+      }
+    }else {
+      audioSlider.onmousedown = ev=>{
+        let originalClientX = ev.clientX
+        let originalWidth = audioProgress.offsetWidth
+  
+        window.onmousemove = ev=>{
+          ev.preventDefault()
+          let currentClientX = ev.clientX
+          let disClientX = currentClientX - originalClientX
+  
+          audioProgress.style.width = disClientX + originalWidth + 'px'
+          if(audioEl.readyState >= 2){
+            const duration = audioEl.duration
+            audioEl.currentTime = modulate(audioProgress.offsetWidth,
+              [0,audioSlider.offsetWidth],
+              [0,duration]
+              )
+          }
+        }
+  
+        window.onmouseup = ()=>{
+          window.onmousemove = null
+        }
+      }
+    }
   
     // 点击喇叭播放/暂停
     audioBtn.addEventListener('click',()=>{
