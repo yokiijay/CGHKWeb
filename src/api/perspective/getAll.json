@@ -3,6 +3,17 @@
     {
       "url": "perspective-link.html",
       "date": "Jun 12",
+      "media": {
+        "href": "https://res.wx.qq.com/voice/getvoice?mediaid=MzA4MzI3NDIwNF8yNjU1OTQyOTgw",
+        "cover": "https://picsum.photos/seed/843/300/300",
+        "duration": "11:32"
+      },
+      "h6": "Hahahaha",
+      "p": "This week, Heritage colleague Jason Snead joins Elizabeth Slattery to slog through recent snooze-worthy opinions. Elizabeth also chats with Ed Whelan and Chris Scalia about \"On Faith: Lessons from an American Believer.\""
+    },
+    {
+      "url": "perspective-link.html",
+      "date": "Jun 12",
       "voice": {
         "src": "https://res.wx.qq.com/voice/getvoice?mediaid=MzA4MzI3NDIwNF8yNjU1OTQyOTgw",
         "p": "Is there a 'Trump Doctrine in Foreign Policy'?"
