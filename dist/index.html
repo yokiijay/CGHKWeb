@@ -14,19 +14,19 @@
   <header class="header">
     <ul class="header-carousel">
       <li class="header-carousel__item header-carousel__item-1">
-        <div class="header-carousel__title">
+        <a class="header-carousel__title" href="/">
           <h1>Prescription Drug Pricing: Striking the Right Balance</h1>
-        </div>
+        </a>
       </li>
       <li class="header-carousel__item header-carousel__item-2">
-        <div class="header-carousel__title">
+        <a class="header-carousel__title" href="/">
           <h1>SCOTUS 101: A Supremely Soporific Slog</h1>
-        </div>
+        </a>
       </li>
       <li class="header-carousel__item header-carousel__item-3">
-        <div class="header-carousel__title">
+        <a class="header-carousel__title" href="/">
           <h1>Is there a 'Trump Doctrine in Foreign Policy'?</h1>
-        </div>
+        </a>
       </li>
     </ul>
     <div class="nav">
@@ -99,6 +99,23 @@
             </div>
           </nav>
         </div>
+        <!-- 这里魔改了 -->
+        <div class="banner-message nav__message">
+          <h3>Message of President</h3>
+          <div class="banner-message__photo">
+            <figure></figure>
+          </div>
+          <a href="/" style="padding: 0; align-self: flex-start;">
+            <h4>Prof. Dr. Peter Qiu, </h4>
+          </a>
+          <p>Only independent and in-depth research makes thoughts and advices valuable…</p>
+          <a class="linkto" href="about-CGHK.html">Read more<i class="icon readmore"></i></a>
+        </div>
+        <div class="banner-pagination nav__pagination">
+          <div class="banner-pagination__item banner-pagination__item--current"></div>
+          <div class="banner-pagination__item"></div>
+          <div class="banner-pagination__item"></div>
+        </div>
       </div>
     </div>
     <!-- 手机版nav -->
@@ -160,11 +177,8 @@
         <button class="btn-float"><i class="icon hamb"></i></button>
       </div>
     </div>
-    <div class="banner">
+    <!-- <div class="banner">
       <div class="banner__wrapper">
-        <!-- <div class="banner-title">
-          <h1>Prescription Drug Pricing: Striking the Right Balance</h1>
-        </div> -->
         <div class="banner-message">
           <h3>Message of President</h3>
           <div class="banner-message__photo"><figure></figure></div>
@@ -178,12 +192,14 @@
           <div class="banner-pagination__item"></div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 手机版message -->
     <div class="message-mob">
       <div class="message-mob__photo"><figure></figure></div>
       <h3>Message of President</h3>
-      <h4>Prof. Dr. Peter Qiu, </h4>
+      <a href="/" style="padding: 0; align-self: flex-start;">
+        <h4>Prof. Dr. Peter Qiu, </h4>
+      </a>
       <a href=""><p>Only independent and in-depth research makes thoughts and advices valuable…</p></a>
       <a class="linkto" href="about-CGHK.html">Read more<i class="icon readmore"></i></a>
     </div>

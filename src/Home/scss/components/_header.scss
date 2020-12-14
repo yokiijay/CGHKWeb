@@ -142,7 +142,7 @@
     padding-bottom: 17px;
   }
 
-  a {
+  a.linkto {
     padding: 0 50px;
     align-self: flex-end;
   }
@@ -176,6 +176,13 @@
 .message-mob { display: none }
 
 @include lg {
+  .header-carousel {
+    pointer-events: none;
+  }
+  .slick-list {
+    pointer-events: auto;
+  }
+
   .header {
     height: auto;
   }

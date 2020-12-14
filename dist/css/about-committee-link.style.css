@@ -250,6 +250,7 @@ figure {
 /*------------------ Nav ------------------*/
 /* nav */
 .nav {
+  position: relative;
   background: rgba(38, 43, 51, 0.9); }
   .nav__wrapper {
     margin: 0 auto;

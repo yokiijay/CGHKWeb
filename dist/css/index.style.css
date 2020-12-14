@@ -250,6 +250,7 @@ figure {
 /*------------------ Nav ------------------*/
 /* nav */
 .nav {
+  position: relative;
   background: rgba(38, 43, 51, 0.9); }
   .nav__wrapper {
     margin: 0 auto;
@@ -515,8 +516,7 @@ figure {
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  z-index: -1; }
+  right: 0; }
   .header-carousel__item {
     height: 700px;
     background-repeat: no-repeat;
@@ -648,7 +648,7 @@ figure {
     color: #5EABFF;
     margin: 0;
     padding-bottom: 17px; }
-  .banner-message a {
+  .banner-message a.linkto {
     padding: 0 50px;
     align-self: flex-end; }
 
@@ -682,6 +682,10 @@ figure {
   display: none; }
 
 @media screen and (max-width: 992px) {
+  .header-carousel {
+    pointer-events: none; }
+  .slick-list {
+    pointer-events: auto; }
   .header {
     height: auto; }
   .banner-message {
@@ -1325,6 +1329,21 @@ figure {
 
 body {
   background: #48546C; }
+
+.nav__wrapper {
+  position: relative; }
+
+.nav__message {
+  position: absolute;
+  right: 0;
+  top: 150px; }
+
+.nav__pagination {
+  position: absolute;
+  top: 670px; }
+
+.message-mob {
+  margin-top: 300px; }
 
 
 /*# sourceMappingURL=index.style.css.map*/
