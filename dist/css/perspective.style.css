@@ -763,8 +763,6 @@ figure {
     background: #5F6B82;
     position: absolute;
     left: -30px; }
-  .content-tab__item:last-child {
-    padding-right: 40px; }
 
 .content-cards {
   display: grid;
